@@ -1,0 +1,8 @@
+﻿{
+    "timestamp":  "2026-03-25 20:16:12",
+    "stage":  "B0",
+    "state":  "running",
+    "log_path":  "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\logs\\B0_yolo11_default_formal_20260325_201612.log",
+    "message":  "training started",
+    "project":  "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_new_formal"
+}

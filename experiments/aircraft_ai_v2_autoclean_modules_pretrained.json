@@ -1,0 +1,74 @@
+{
+  "suite_id": "aircraft_ai_v2_autoclean_modules_pretrained",
+  "description": "Pretrained-transfer module ablation on the conservative auto-cleaned Aircraft AI v2 dataset.",
+  "results_csv": "results/aircraft_ai_v2_autoclean_modules_pretrained.csv",
+  "target_class_names": [
+    "missing-rivet",
+    "rust",
+    "scratch"
+  ],
+  "dataset_yaml": "datasets/generated_3cls/aircraft_ai_v2_cleaneval_cleantrain.yaml",
+  "project": "runs/aircraft_ai_v2_autoclean_modules_pretrained",
+  "train_defaults": {
+    "imgsz": 800,
+    "epochs": 100,
+    "batch": 8,
+    "device": "auto",
+    "workers": 0,
+    "seed": 42,
+    "deterministic": true,
+    "optimizer": "auto",
+    "amp": true,
+    "plots": true,
+    "val": true,
+    "save": true,
+    "exist_ok": false,
+    "rect": false,
+    "cache": false,
+    "pretrained": true,
+    "mosaic": 0.0,
+    "erasing": 0.0,
+    "mixup": 0.0,
+    "auto_augment": "none",
+    "flipud": 0.0,
+    "close_mosaic": 0,
+    "patience": 30
+  },
+  "metadata_defaults": {
+    "experiment_group": "aircraft_ai_v2_autoclean_modules_pretrained",
+    "dataset_id": "aircraft_ai_v2_autoclean",
+    "dataset_role": "clean_train_clean_eval",
+    "augment_profile": "n2_no_mosaic_no_erasing",
+    "backbone_variant": "yolo11n",
+    "neck_variant": "default",
+    "loss_variant": "default",
+    "assigner_variant": "default",
+    "notes": "Custom module structures trained with explicit yolo11n.pt pretrained transfer when compatible."
+  },
+  "experiments": [
+    {
+      "experiment_id": "PM1_P2_HEAD_PRETRAIN",
+      "name": "PM1_p2_head_pretrain_clean_n2",
+      "title": "P2 small-object head with yolo11n pretrained transfer",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_p2.yaml",
+      "pretrained": "../yolo11n.pt",
+      "metadata": {
+        "feature_variant": "p2_head",
+        "notes": "High-resolution P2 head with explicit yolo11n.pt pretrained transfer."
+      }
+    },
+    {
+      "experiment_id": "PM2_SPD_STEM_PRETRAIN",
+      "name": "PM2_spd_stem_pretrain_clean_n2",
+      "title": "SPD detail-preserving stem with yolo11n pretrained transfer",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_spd.yaml",
+      "pretrained": "../yolo11n.pt",
+      "metadata": {
+        "feature_variant": "spd_stem",
+        "notes": "SPD stem with explicit yolo11n.pt pretrained transfer where layer shapes match."
+      }
+    }
+  ]
+}

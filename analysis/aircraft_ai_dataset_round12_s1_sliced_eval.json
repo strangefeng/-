@@ -1,0 +1,38 @@
+{
+  "mode": "sliced_inference_only",
+  "title": "N2 weights with sliced inference only",
+  "dataset_role": "sliced_inference_only",
+  "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round4\\N2_yolo11n_i800_no_mosaic\\weights\\best.pt",
+  "dataset_yaml": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\supplementary_3cls\\aircraft_ai_dataset_3cls\\data.yaml",
+  "split": "valid",
+  "slice_size": 512,
+  "overlap": 0.2,
+  "imgsz": 800,
+  "conf": 0.001,
+  "tile_iou": 0.7,
+  "merge_iou": 0.5,
+  "precision": 0.035441278665740095,
+  "recall": 0.694468085106383,
+  "map50": 0.33200633305952065,
+  "map50_95": 0.11987767899774693,
+  "class_metrics": {
+    "missing-rivet": {
+      "ap50": 0.39884767766987217,
+      "ap50_95": 0.14241677151641324,
+      "predictions": 5880,
+      "ground_truths": 321
+    },
+    "rust": {
+      "ap50": 0.28973316820420125,
+      "ap50_95": 0.10843972374562239,
+      "predictions": 7083,
+      "ground_truths": 426
+    },
+    "scratch": {
+      "ap50": 0.30743815330448854,
+      "ap50_95": 0.10877654173120514,
+      "predictions": 10061,
+      "ground_truths": 428
+    }
+  }
+}

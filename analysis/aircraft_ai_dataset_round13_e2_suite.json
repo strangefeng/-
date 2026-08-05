@@ -1,0 +1,235 @@
+{
+  "title": "R13-E2 full/slice/fused inference suite",
+  "dataset_role": "round13_full_slice_fused_eval",
+  "dataset_yaml": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\supplementary_3cls\\aircraft_ai_dataset_3cls\\data.yaml",
+  "split": "valid",
+  "slice_size": 512,
+  "overlap": 0.2,
+  "imgsz": 800,
+  "full_conf": 0.25,
+  "slice_conf": 0.2,
+  "final_conf": 0.25,
+  "merge_iou": 0.5,
+  "resolved_device": "0",
+  "n2_weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round4\\N2_yolo11n_i800_no_mosaic\\weights\\best.pt",
+  "s2_weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round12_automation\\S2_yolo11n_i800_slice512_train3\\weights\\best.pt",
+  "results": [
+    {
+      "experiment_id": "E2-1",
+      "model_id": "N2",
+      "mode": "full",
+      "title": "N2 full-image inference",
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round4\\N2_yolo11n_i800_no_mosaic\\weights\\best.pt",
+      "precision": 0.6737320211960636,
+      "recall": 0.7574468085106383,
+      "map50": 0.6744393108073691,
+      "map50_95": 0.3109464828625774,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.5759753377512329,
+          "ap50_95": 0.26902004022667964,
+          "predictions": 355,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.7598971748196659,
+          "ap50_95": 0.35515795756294266,
+          "predictions": 489,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.6874454198512083,
+          "ap50_95": 0.3086614507981101,
+          "predictions": 477,
+          "ground_truths": 428
+        }
+      }
+    },
+    {
+      "experiment_id": "E2-2",
+      "model_id": "N2",
+      "mode": "slice",
+      "title": "N2 sliced inference",
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round4\\N2_yolo11n_i800_no_mosaic\\weights\\best.pt",
+      "precision": 0.4049586776859504,
+      "recall": 0.41702127659574467,
+      "map50": 0.2761907518395535,
+      "map50_95": 0.10251854406441237,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.33678671933321014,
+          "ap50_95": 0.12187655646755695,
+          "predictions": 376,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.23959999844756474,
+          "ap50_95": 0.09373671545834399,
+          "predictions": 300,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.25218553773788566,
+          "ap50_95": 0.0919423602673362,
+          "predictions": 534,
+          "ground_truths": 428
+        }
+      }
+    },
+    {
+      "experiment_id": "E2-3",
+      "model_id": "N2",
+      "mode": "fused",
+      "title": "N2 full+sliced fused inference",
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round4\\N2_yolo11n_i800_no_mosaic\\weights\\best.pt",
+      "precision": 0.4914881933003844,
+      "recall": 0.7617021276595745,
+      "map50": 0.6075910830382615,
+      "map50_95": 0.27018496932250086,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.5160746876239535,
+          "ap50_95": 0.217234079097347,
+          "predictions": 482,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.7194433041300813,
+          "ap50_95": 0.32981707520537673,
+          "predictions": 585,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.5872552573607499,
+          "ap50_95": 0.26350375366477885,
+          "predictions": 754,
+          "ground_truths": 428
+        }
+      }
+    },
+    {
+      "experiment_id": "E2-4",
+      "model_id": "S2",
+      "mode": "full",
+      "title": "S2 full-image inference",
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round12_automation\\S2_yolo11n_i800_slice512_train3\\weights\\best.pt",
+      "precision": 0.7016,
+      "recall": 0.7463829787234042,
+      "map50": 0.6668731071144808,
+      "map50_95": 0.2916852992304072,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.5892337122219713,
+          "ap50_95": 0.2409341011944021,
+          "predictions": 325,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.7384695678522406,
+          "ap50_95": 0.3321769105667088,
+          "predictions": 459,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.6729160412692305,
+          "ap50_95": 0.3019448859301107,
+          "predictions": 466,
+          "ground_truths": 428
+        }
+      }
+    },
+    {
+      "experiment_id": "E2-5",
+      "model_id": "S2",
+      "mode": "slice",
+      "title": "S2 sliced inference",
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round12_automation\\S2_yolo11n_i800_slice512_train3\\weights\\best.pt",
+      "precision": 0.4856373429084381,
+      "recall": 0.4604255319148936,
+      "map50": 0.33786299445635876,
+      "map50_95": 0.12353006292887563,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.39307504534940796,
+          "ap50_95": 0.138616028570472,
+          "predictions": 368,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.2912877968002005,
+          "ap50_95": 0.10509092968785513,
+          "predictions": 279,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.3292261412194679,
+          "ap50_95": 0.1268832305282997,
+          "predictions": 467,
+          "ground_truths": 428
+        }
+      }
+    },
+    {
+      "experiment_id": "E2-6",
+      "model_id": "S2",
+      "mode": "fused",
+      "title": "S2 full+sliced fused inference",
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round12_automation\\S2_yolo11n_i800_slice512_train3\\weights\\best.pt",
+      "precision": 0.5495169082125604,
+      "recall": 0.774468085106383,
+      "map50": 0.6304959016026405,
+      "map50_95": 0.2585782173106224,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.5586728096982572,
+          "ap50_95": 0.2138888842454806,
+          "predictions": 462,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.7192577878302151,
+          "ap50_95": 0.30293784284633635,
+          "predictions": 541,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.6135571072794493,
+          "ap50_95": 0.2589079248400504,
+          "predictions": 653,
+          "ground_truths": 428
+        }
+      }
+    }
+  ],
+  "best_run": {
+    "experiment_id": "E2-1",
+    "model_id": "N2",
+    "mode": "full",
+    "title": "N2 full-image inference",
+    "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round4\\N2_yolo11n_i800_no_mosaic\\weights\\best.pt",
+    "precision": 0.6737320211960636,
+    "recall": 0.7574468085106383,
+    "map50": 0.6744393108073691,
+    "map50_95": 0.3109464828625774,
+    "class_metrics": {
+      "missing-rivet": {
+        "ap50": 0.5759753377512329,
+        "ap50_95": 0.26902004022667964,
+        "predictions": 355,
+        "ground_truths": 321
+      },
+      "rust": {
+        "ap50": 0.7598971748196659,
+        "ap50_95": 0.35515795756294266,
+        "predictions": 489,
+        "ground_truths": 426
+      },
+      "scratch": {
+        "ap50": 0.6874454198512083,
+        "ap50_95": 0.3086614507981101,
+        "predictions": 477,
+        "ground_truths": 428
+      }
+    }
+  }
+}

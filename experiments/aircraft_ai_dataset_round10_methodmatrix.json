@@ -1,0 +1,97 @@
+{
+  "suite_id": "aircraft_ai_dataset_round10_methodmatrix",
+  "description": "Round-10 executable method-matrix suite that validates a lightweight single-point ECA innovation across the public N2 anchor, the fit-within export, and the targeted-clean dataset branch.",
+  "results_csv": "results/aircraft_ai_dataset_round10_methodmatrix.csv",
+  "target_class_names": [
+    "missing-rivet",
+    "rust",
+    "scratch"
+  ],
+  "dataset_yaml": "datasets/supplementary_3cls/aircraft_ai_dataset_3cls/data.yaml",
+  "project": "runs/aircraft_ai_round10_methodmatrix",
+  "train_defaults": {
+    "imgsz": 800,
+    "epochs": 100,
+    "batch": 12,
+    "device": "auto",
+    "workers": 0,
+    "seed": 0,
+    "deterministic": true,
+    "optimizer": "auto",
+    "amp": true,
+    "plots": true,
+    "val": true,
+    "save": true,
+    "exist_ok": false,
+    "rect": false,
+    "mosaic": 0.0,
+    "erasing": 0.0,
+    "auto_augment": "none",
+    "close_mosaic": 0
+  },
+  "metadata_defaults": {
+    "experiment_group": "aircraft_ai_dataset_round10_methodmatrix",
+    "dataset_role": "method_matrix_candidate",
+    "backbone_variant": "yolo11_default",
+    "feature_variant": "default",
+    "neck_variant": "eca_attention",
+    "loss_variant": "default",
+    "assigner_variant": "default",
+    "notes": "Round 10 operationalizes the paper method matrix with the currently available lightweight attention innovation and frozen N2-style training strategy."
+  },
+  "experiments": [
+    {
+      "experiment_id": "A1",
+      "name": "A1_yolo11n_i800_p3eca_public_n2",
+      "title": "Single-point P3-ECA attention on the public N2 anchor",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_p3_eca.yaml",
+      "pretrained": "../yolo11n.pt",
+      "metadata": {
+        "augment_profile": "n2_public_with_p3_eca",
+        "dataset_role": "public_3cls",
+        "notes": "Directly tests whether a single lightweight ECA block can improve the public N2 anchor without the failed P2 branch."
+      },
+      "overrides": {
+        "imgsz": 800,
+        "batch": 12
+      }
+    },
+    {
+      "experiment_id": "A2",
+      "name": "A2_yolo11n_i800_p3eca_fitwithin",
+      "title": "Single-point P3-ECA attention on the fit-within export",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_p3_eca.yaml",
+      "pretrained": "../yolo11n.pt",
+      "dataset_yaml": "datasets/supplementary_3cls/aircraft_ai_dataset_3cls_v2_fit/data.yaml",
+      "metadata": {
+        "augment_profile": "n2_fit_within_with_p3_eca",
+        "dataset_role": "fit_within_v2",
+        "notes": "Checks whether the lightweight attention block becomes more effective when the export keeps aspect ratio information."
+      },
+      "overrides": {
+        "imgsz": 800,
+        "batch": 12
+      }
+    },
+    {
+      "experiment_id": "A3",
+      "name": "A3_yolo11n_i800_p3eca_targetedclean",
+      "title": "Single-point P3-ECA attention on the targeted-clean dataset branch",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_p3_eca.yaml",
+      "pretrained": "../yolo11n.pt",
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_manual_clean_v1_targeted/data.yaml",
+      "metadata": {
+        "augment_profile": "n2_targetedclean_with_p3_eca",
+        "dataset_role": "manual_clean_v1_targeted",
+        "notes": "Combines the lightweight attention innovation with the best available train-only targeted-clean branch to test whether cleaner labels unlock the attention gain."
+      },
+      "overrides": {
+        "imgsz": 800,
+        "batch": 12
+      }
+    }
+  ]
+}

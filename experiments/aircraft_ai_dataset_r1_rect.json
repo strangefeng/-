@@ -1,0 +1,55 @@
+{
+    "suite_id": "aircraft_ai_dataset_r1_rect",
+    "description": "Single-factor check for whether rect=True improves the 800-resolution R1 baseline.",
+    "results_csv": "results/aircraft_ai_dataset_r1_rect.csv",
+    "target_class_names": [
+        "missing-rivet",
+        "rust",
+        "scratch"
+    ],
+    "dataset_yaml": "datasets/supplementary_3cls/aircraft_ai_dataset_3cls/data.yaml",
+    "project": "runs/aircraft_ai_r1_rect",
+    "train_defaults": {
+        "imgsz": 800,
+        "epochs": 100,
+        "batch": 12,
+        "device": "auto",
+        "workers": 0,
+        "seed": 0,
+        "deterministic": true,
+        "optimizer": "auto",
+        "amp": true,
+        "plots": true,
+        "val": true,
+        "save": true,
+        "exist_ok": false,
+        "rect": true
+    },
+    "metadata_defaults": {
+        "experiment_group": "aircraft_ai_dataset_r1_rect",
+        "dataset_role": "rect_check",
+        "backbone_variant": "yolo11_default",
+        "feature_variant": "default",
+        "neck_variant": "default",
+        "loss_variant": "default",
+        "assigner_variant": "default",
+        "notes": "Keep the R1 recipe but switch on rect=True to test whether rectangular training is a better fit for this dataset."
+    },
+    "experiments": [
+        {
+            "experiment_id": "R1_rect",
+            "name": "R1_rect_yolo11n_i800",
+            "title": "R1 baseline with rect=True",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "highres_default_rect",
+                "notes": "Single-factor comparison against R1 to verify whether rectangular training improves stability at 800 resolution."
+            },
+            "overrides": {
+                "imgsz": 800,
+                "batch": 12,
+                "rect": true
+            }
+        }
+    ]
+}

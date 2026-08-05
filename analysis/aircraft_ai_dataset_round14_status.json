@@ -1,0 +1,10 @@
+{
+  "deployment_negative_set_yaml": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50_negonly\\data.yaml",
+  "blocked_experiments": [
+    {
+      "experiment": "R14-QA2_N2_CleanTrain",
+      "reason": "QA1 suggests a clean-train branch, but QA2 remains pending manual label correction and a reviewed label_fix_log."
+    }
+  ],
+  "notes": []
+}

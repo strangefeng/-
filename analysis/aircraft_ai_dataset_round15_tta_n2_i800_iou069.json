@@ -1,0 +1,32 @@
+{
+  "title": "R15 TTA N2 imgsz800 iou069 official val",
+  "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round4\\N2_yolo11n_i800_no_mosaic\\weights\\best.pt",
+  "dataset_yaml": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\supplementary_3cls\\aircraft_ai_dataset_3cls\\data.yaml",
+  "split": "val",
+  "imgsz": 800,
+  "device": "0",
+  "workers": 0,
+  "conf": null,
+  "iou": 0.69,
+  "max_det": 300,
+  "augment": true,
+  "precision": 0.7798345211377494,
+  "recall": 0.7091578547087302,
+  "map50": 0.7454448720339079,
+  "map50_95": 0.35561172665369317,
+  "class_metrics": {
+    "missing-rivet": {
+      "ap50": 0.6653508069171845,
+      "ap50_95": 0.315099945419844
+    },
+    "rust": {
+      "ap50": 0.8035121883246987,
+      "ap50_95": 0.39975253001183586
+    },
+    "scratch": {
+      "ap50": 0.7674716208598403,
+      "ap50_95": 0.3519827045293996
+    }
+  },
+  "save_dir": "D:\\桌面\\毕设\\数据集\\runs\\detect\\val11"
+}

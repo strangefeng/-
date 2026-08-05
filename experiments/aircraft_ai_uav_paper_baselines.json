@@ -1,0 +1,183 @@
+{
+  "suite_id": "aircraft_ai_uav_paper_baselines",
+  "description": "Mainstream detector comparison for the cleaned three-class UAV aircraft skin defect dataset.",
+  "results_csv": "results/aircraft_ai_uav_paper_baselines.csv",
+  "target_class_names": [
+    "missing-rivet",
+    "rust",
+    "scratch"
+  ],
+  "dataset_yaml": "datasets/generated_3cls/aircraft_ai_uav_clean_split.yaml",
+  "project": "runs/aircraft_ai_uav_paper_baselines",
+  "train_defaults": {
+    "imgsz": 800,
+    "epochs": 100,
+    "batch": 8,
+    "device": "auto",
+    "workers": 0,
+    "seed": 42,
+    "deterministic": true,
+    "optimizer": "auto",
+    "amp": true,
+    "plots": true,
+    "val": true,
+    "save": true,
+    "exist_ok": false,
+    "rect": false,
+    "cache": false,
+    "pretrained": true,
+    "mosaic": 0.0,
+    "erasing": 0.0,
+    "mixup": 0.0,
+    "auto_augment": "none",
+    "flipud": 0.0,
+    "close_mosaic": 0,
+    "patience": 30
+  },
+  "metadata_defaults": {
+    "experiment_group": "aircraft_ai_uav_paper_baselines",
+    "dataset_id": "aircraft_ai_uav_clean_split",
+    "dataset_role": "clean_train_clean_eval",
+    "augment_profile": "n2_no_mosaic_no_erasing",
+    "feature_variant": "default",
+    "neck_variant": "default",
+    "loss_variant": "default",
+    "assigner_variant": "default",
+    "notes": "Mainstream detector baselines trained under the same clean split and N2-style augmentation profile."
+  },
+  "experiments": [
+    {
+      "experiment_id": "B01_YOLOV5N",
+      "name": "B01_yolov5n_uav_clean",
+      "title": "YOLOv5n baseline",
+      "ready": true,
+      "model": "yolov5nu.pt",
+      "metadata": {
+        "backbone_variant": "yolov5n"
+      }
+    },
+    {
+      "experiment_id": "B02_YOLOV5S",
+      "name": "B02_yolov5s_uav_clean",
+      "title": "YOLOv5s baseline",
+      "ready": true,
+      "model": "yolov5su.pt",
+      "metadata": {
+        "backbone_variant": "yolov5s"
+      }
+    },
+    {
+      "experiment_id": "B03_YOLOV8N",
+      "name": "B03_yolov8n_uav_clean",
+      "title": "YOLOv8n baseline",
+      "ready": true,
+      "model": "yolov8n.pt",
+      "metadata": {
+        "backbone_variant": "yolov8n"
+      }
+    },
+    {
+      "experiment_id": "B04_YOLOV8S",
+      "name": "B04_yolov8s_uav_clean",
+      "title": "YOLOv8s baseline",
+      "ready": true,
+      "model": "yolov8s.pt",
+      "metadata": {
+        "backbone_variant": "yolov8s"
+      }
+    },
+    {
+      "experiment_id": "B05_YOLOV9T",
+      "name": "B05_yolov9t_uav_clean",
+      "title": "YOLOv9t baseline",
+      "ready": true,
+      "model": "yolov9t.pt",
+      "metadata": {
+        "backbone_variant": "yolov9t"
+      }
+    },
+    {
+      "experiment_id": "B06_YOLOV9S",
+      "name": "B06_yolov9s_uav_clean",
+      "title": "YOLOv9s baseline",
+      "ready": true,
+      "model": "yolov9s.pt",
+      "metadata": {
+        "backbone_variant": "yolov9s"
+      }
+    },
+    {
+      "experiment_id": "B07_YOLOV10N",
+      "name": "B07_yolov10n_uav_clean",
+      "title": "YOLOv10n baseline",
+      "ready": true,
+      "model": "yolov10n.pt",
+      "metadata": {
+        "backbone_variant": "yolov10n"
+      }
+    },
+    {
+      "experiment_id": "B08_YOLOV10S",
+      "name": "B08_yolov10s_uav_clean",
+      "title": "YOLOv10s baseline",
+      "ready": true,
+      "model": "yolov10s.pt",
+      "metadata": {
+        "backbone_variant": "yolov10s"
+      }
+    },
+    {
+      "experiment_id": "B09_YOLO11N",
+      "name": "B09_yolo11n_uav_clean",
+      "title": "YOLO11n baseline",
+      "ready": true,
+      "model": "yolo11n.pt",
+      "metadata": {
+        "backbone_variant": "yolo11n"
+      }
+    },
+    {
+      "experiment_id": "B10_YOLO11S",
+      "name": "B10_yolo11s_uav_clean",
+      "title": "YOLO11s baseline",
+      "ready": true,
+      "model": "yolo11s.pt",
+      "metadata": {
+        "backbone_variant": "yolo11s"
+      }
+    },
+    {
+      "experiment_id": "B11_YOLO26N",
+      "name": "B11_yolo26n_uav_clean",
+      "title": "YOLO26n baseline",
+      "ready": true,
+      "model": "../yolo26n.pt",
+      "metadata": {
+        "backbone_variant": "yolo26n"
+      }
+    },
+    {
+      "experiment_id": "B12_YOLO26S",
+      "name": "B12_yolo26s_uav_clean",
+      "title": "YOLO26s baseline",
+      "ready": true,
+      "model": "yolo26s.pt",
+      "metadata": {
+        "backbone_variant": "yolo26s"
+      }
+    },
+    {
+      "experiment_id": "B13_RTDETR_L",
+      "name": "B13_rtdetr_l_uav_clean",
+      "title": "RT-DETR-l baseline",
+      "ready": true,
+      "model": "../rtdetr-l.pt",
+      "overrides": {
+        "batch": 4
+      },
+      "metadata": {
+        "backbone_variant": "rtdetr-l"
+      }
+    }
+  ]
+}

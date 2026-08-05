@@ -1,0 +1,72 @@
+{
+  "n2_map50_95": 0.352565,
+  "target_delta_low": 0.01,
+  "target_delta_high": 0.02,
+  "target_status": "not_reached",
+  "best_experiment_id": "A1",
+  "best_map50_95": 0.275601,
+  "best_delta_vs_n2": -0.07696400000000003,
+  "completed_count": 4,
+  "rows": [
+    {
+      "experiment_id": "A1",
+      "title": "SPD detail-preserving stem under the N2 recipe",
+      "map50": 0.624349,
+      "map50_95": 0.275601,
+      "delta_vs_n2": -0.07696400000000003,
+      "precision": 0.652442,
+      "recall": 0.605724,
+      "missing_rivet": 0.238004,
+      "rust": 0.31725,
+      "scratch": 0.27155,
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round16_aerodefect\\A1_yolo11n_i800_spd_stem3\\weights\\best.pt",
+      "run_dir": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round16_aerodefect\\A1_yolo11n_i800_spd_stem3",
+      "status": "success"
+    },
+    {
+      "experiment_id": "A2",
+      "title": "Plain P2 small-object head control under the N2 recipe",
+      "map50": 0.556663,
+      "map50_95": 0.239904,
+      "delta_vs_n2": -0.11266100000000001,
+      "precision": 0.638549,
+      "recall": 0.511004,
+      "missing_rivet": 0.206843,
+      "rust": 0.273087,
+      "scratch": 0.239782,
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round16_aerodefect\\A2_yolo11n_i800_plain_p2_control\\weights\\best.pt",
+      "run_dir": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round16_aerodefect\\A2_yolo11n_i800_plain_p2_control",
+      "status": "success"
+    },
+    {
+      "experiment_id": "A3",
+      "title": "SPD stem plus defect-aware morphology P2 branch",
+      "map50": 0.581045,
+      "map50_95": 0.265322,
+      "delta_vs_n2": -0.08724300000000001,
+      "precision": 0.597989,
+      "recall": 0.561007,
+      "missing_rivet": 0.232159,
+      "rust": 0.313169,
+      "scratch": 0.25064,
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round16_aerodefect\\A3_yolo11n_i800_spd_defect_p2\\weights\\best.pt",
+      "run_dir": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round16_aerodefect\\A3_yolo11n_i800_spd_defect_p2",
+      "status": "success"
+    },
+    {
+      "experiment_id": "A4",
+      "title": "Full AeroDefect-YOLO with dynamic multi-scale fusion",
+      "map50": 0.569829,
+      "map50_95": 0.244916,
+      "delta_vs_n2": -0.10764900000000002,
+      "precision": 0.627144,
+      "recall": 0.536638,
+      "missing_rivet": 0.201089,
+      "rust": 0.281511,
+      "scratch": 0.25215,
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round16_aerodefect\\A4_yolo11n_i800_spd_defect_p2_dyfuse\\weights\\best.pt",
+      "run_dir": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round16_aerodefect\\A4_yolo11n_i800_spd_defect_p2_dyfuse",
+      "status": "success"
+    }
+  ]
+}

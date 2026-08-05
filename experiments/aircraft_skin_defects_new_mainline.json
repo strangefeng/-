@@ -1,0 +1,275 @@
+﻿{
+    "suite_id":  "aircraft_skin_defects_new_mainline",
+    "description":  "Main ablation line for aircraft_skin_defects_new using a clean baseline-first workflow.",
+    "dataset_yaml":  "datasets/standardized_5cls/aircraft_skin_defects_new/data.yaml",
+    "project":  "runs/aircraft_new",
+    "train_defaults":  {
+                           "imgsz":  640,
+                           "epochs":  100,
+                           "batch":  16,
+                           "device":  "auto",
+                           "workers":  8,
+                           "seed":  0,
+                           "deterministic":  true,
+                           "optimizer":  "auto",
+                           "amp":  true,
+                           "plots":  true,
+                           "val":  true,
+                           "save":  true,
+                           "exist_ok":  false
+                       },
+    "metadata_defaults":  {
+                              "experiment_group":  "aircraft_skin_defects_new_mainline",
+                              "dataset_role":  "main_ablation_dataset",
+                              "backbone_variant":  "yolo11_default",
+                              "feature_variant":  "default",
+                              "neck_variant":  "default",
+                              "loss_variant":  "default",
+                              "assigner_variant":  "default",
+                              "notes":  "Keep dataset split, imgsz, batch, epochs, optimizer and seed fixed across the full ablation line."
+                          },
+    "experiments":  [
+                        {
+                            "experiment_id":  "B0",
+                            "name":  "B0_yolo11_default",
+                            "title":  "Official default baseline",
+                            "ready":  true,
+                            "metadata":  {
+                                             "augment_profile":  "default_official"
+                                         },
+                            "overrides":  {
+
+                                          }
+                        },
+                        {
+                            "experiment_id":  "B1",
+                            "name":  "B1_yolo11_taskadapt",
+                            "title":  "Weak-texture friendly baseline",
+                            "ready":  true,
+                            "metadata":  {
+                                             "augment_profile":  "weak_texture_preserving"
+                                         },
+                            "overrides":  {
+                                              "degrees":  2.0,
+                                              "translate":  0.05,
+                                              "scale":  0.2,
+                                              "perspective":  0.0003,
+                                              "fliplr":  0.5,
+                                              "flipud":  0.0,
+                                              "hsv_h":  0.01,
+                                              "hsv_s":  0.3,
+                                              "hsv_v":  0.2,
+                                              "mosaic":  0.2,
+                                              "mixup":  0.0,
+                                              "erasing":  0.0,
+                                              "close_mosaic":  10
+                                          }
+                        },
+                        {
+                            "experiment_id":  "B1_CP",
+                            "name":  "B1_yolo11_taskadapt_copypaste",
+                            "title":  "Weak-texture baseline plus offline scratch Copy-Paste",
+                            "ready":  true,
+                            "dataset_yaml":  "datasets/generated_5cls/aircraft_skin_defects_new_copypaste/data.yaml",
+                            "metadata":  {
+                                             "augment_profile":  "weak_texture_preserving+offline_scratch_copypaste",
+                                             "notes":  "Train on the generated offline Copy-Paste dataset variant while keeping validation and test splits unchanged."
+                                         },
+                            "overrides":  {
+                                              "degrees":  2.0,
+                                              "translate":  0.05,
+                                              "scale":  0.2,
+                                              "perspective":  0.0003,
+                                              "fliplr":  0.5,
+                                              "flipud":  0.0,
+                                              "hsv_h":  0.01,
+                                              "hsv_s":  0.3,
+                                              "hsv_v":  0.2,
+                                              "mosaic":  0.2,
+                                              "mixup":  0.0,
+                                              "erasing":  0.0,
+                                              "close_mosaic":  10
+                                          }
+                        },
+                        {
+                            "experiment_id":  "Exp_A",
+                            "name":  "Exp_A_baseline_cp",
+                            "title":  "Baseline YOLO11n plus offline Copy-Paste",
+                            "ready":  true,
+                            "dataset_yaml":  "datasets/generated_5cls/aircraft_skin_defects_new_copypaste/data.yaml",
+                            "metadata":  {
+                                             "augment_profile":  "default_official+offline_scratch_copypaste",
+                                             "notes":  "Official YOLO11n baseline trained on the offline Copy-Paste dataset variant with validation and test splits unchanged."
+                                         },
+                            "overrides":  {
+                                              "save_period":  10
+                                          }
+                        },
+                        {
+                            "experiment_id":  "Exp_B",
+                            "name":  "Exp_B_neck_wt",
+                            "title":  "YOLO11n with Neck-WT refinement on original dataset",
+                            "ready":  true,
+                            "model":  "custom_yolo/models/yolo11n_neck_wt.yaml",
+                            "pretrained":  "../yolo11n.pt",
+                            "metadata":  {
+                                             "augment_profile":  "default_official",
+                                             "feature_variant":  "wtconv_neck_refine",
+                                             "neck_variant":  "wt_neck_refine",
+                                             "notes":  "Shift WT-based frequency filtering from backbone downsampling to neck-side refinement while keeping the original dataset split."
+                                         },
+                            "overrides":  {
+                                              "save_period":  10
+                                          }
+                        },
+                        {
+                            "experiment_id":  "Exp_C",
+                            "name":  "Exp_C_neck_wt_cp",
+                            "title":  "YOLO11n with Neck-WT refinement plus offline Copy-Paste",
+                            "ready":  true,
+                            "model":  "custom_yolo/models/yolo11n_neck_wt.yaml",
+                            "pretrained":  "../yolo11n.pt",
+                            "dataset_yaml":  "datasets/generated_5cls/aircraft_skin_defects_new_copypaste/data.yaml",
+                            "metadata":  {
+                                             "augment_profile":  "default_official+offline_scratch_copypaste",
+                                             "feature_variant":  "wtconv_neck_refine",
+                                             "neck_variant":  "wt_neck_refine",
+                                             "notes":  "Combine neck-side WT refinement with the offline Copy-Paste dataset variant to test whether structural and data-distribution gains are super-additive."
+                                         },
+                            "overrides":  {
+                                              "save_period":  10
+                                          }
+                        },
+                        {
+                            "experiment_id":  "M1",
+                            "name":  "M1_yolo11_taskadapt_wtconv",
+                            "title":  "Task-adapted baseline plus WTConv",
+                            "ready":  true,
+                            "model":  "custom_yolo/models/yolo11n_dwt.yaml",
+                            "pretrained":  "../yolo11n.pt",
+                            "metadata":  {
+                                             "augment_profile":  "weak_texture_preserving",
+                                             "feature_variant":  "wtconv_bypass"
+                                         },
+                            "overrides":  {
+                                              "degrees":  2.0,
+                                              "translate":  0.05,
+                                              "scale":  0.2,
+                                              "perspective":  0.0003,
+                                              "fliplr":  0.5,
+                                              "flipud":  0.0,
+                                              "hsv_h":  0.01,
+                                              "hsv_s":  0.3,
+                                              "hsv_v":  0.2,
+                                              "mosaic":  0.2,
+                                              "mixup":  0.0,
+                                              "erasing":  0.0,
+                                              "close_mosaic":  10
+                                          }
+                        },
+                        {
+                            "experiment_id":  "M2",
+                            "name":  "M2_yolo11_taskadapt_wtconv_nwdloss",
+                            "title":  "WTConv plus NWD loss",
+                            "ready":  true,
+                            "model":  "custom_yolo/models/yolo11n_dwt.yaml",
+                            "pretrained":  "../yolo11n.pt",
+                            "metadata":  {
+                                             "augment_profile":  "weak_texture_preserving",
+                                             "feature_variant":  "wtconv_bypass",
+                                             "loss_variant":  "nwd_loss"
+                                         },
+                            "overrides":  {
+                                              "degrees":  2.0,
+                                              "translate":  0.05,
+                                              "scale":  0.2,
+                                              "perspective":  0.0003,
+                                              "fliplr":  0.5,
+                                              "flipud":  0.0,
+                                              "hsv_h":  0.01,
+                                              "hsv_s":  0.3,
+                                              "hsv_v":  0.2,
+                                              "mosaic":  0.2,
+                                              "mixup":  0.0,
+                                              "erasing":  0.0,
+                                              "close_mosaic":  10
+                                          }
+                        },
+                        {
+                            "experiment_id":  "M3",
+                            "name":  "M3_yolo11_taskadapt_wtconv_nwdassign",
+                            "title":  "WTConv plus NWD cooperative supervision",
+                            "ready":  true,
+                            "model":  "custom_yolo/models/yolo11n_dwt.yaml",
+                            "pretrained":  "../yolo11n.pt",
+                            "metadata":  {
+                                             "augment_profile":  "weak_texture_preserving",
+                                             "feature_variant":  "wtconv_bypass",
+                                             "loss_variant":  "nwd_loss",
+                                             "assigner_variant":  "nwd_assigner"
+                                         },
+                            "overrides":  {
+                                              "degrees":  2.0,
+                                              "translate":  0.05,
+                                              "scale":  0.2,
+                                              "perspective":  0.0003,
+                                              "fliplr":  0.5,
+                                              "flipud":  0.0,
+                                              "hsv_h":  0.01,
+                                              "hsv_s":  0.3,
+                                              "hsv_v":  0.2,
+                                              "mosaic":  0.2,
+                                              "mixup":  0.0,
+                                              "erasing":  0.0,
+                                              "close_mosaic":  10
+                                          }
+                        },
+                        {
+                            "experiment_id":  "M4",
+                            "name":  "M4_yolo11_taskadapt_wtconv_nwdassign_rep",
+                            "title":  "Final structure with WTConv, NWD and Rep neck",
+                            "ready":  true,
+                            "model":  "custom_yolo/models/yolo11n_dwt_repneck.yaml",
+                            "pretrained":  "../yolo11n.pt",
+                            "metadata":  {
+                                             "augment_profile":  "weak_texture_preserving",
+                                             "feature_variant":  "wtconv_bypass",
+                                             "neck_variant":  "rep_neck",
+                                             "loss_variant":  "nwd_loss",
+                                             "assigner_variant":  "nwd_assigner"
+                                         },
+                            "overrides":  {
+                                              "degrees":  2.0,
+                                              "translate":  0.05,
+                                              "scale":  0.2,
+                                              "perspective":  0.0003,
+                                              "fliplr":  0.5,
+                                              "flipud":  0.0,
+                                              "hsv_h":  0.01,
+                                              "hsv_s":  0.3,
+                                              "hsv_v":  0.2,
+                                              "mosaic":  0.2,
+                                              "mixup":  0.0,
+                                              "erasing":  0.0,
+                                              "close_mosaic":  10
+                                          }
+                        },
+                        {
+                            "experiment_id":  "M5",
+                            "name":  "DEPLOY_m4_onnx_tensorrt",
+                            "title":  "Deployment export and benchmark",
+                            "ready":  false,
+                            "blocked_reason":  "Deployment should start only after the final model weights exist.",
+                            "metadata":  {
+                                             "augment_profile":  "weak_texture_preserving",
+                                             "feature_variant":  "wtconv_bypass",
+                                             "neck_variant":  "rep_neck",
+                                             "loss_variant":  "nwd_loss",
+                                             "assigner_variant":  "nwd_assigner"
+                                         },
+                            "overrides":  {
+
+                                          }
+                        }
+                    ]
+}

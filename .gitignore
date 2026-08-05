@@ -1,0 +1,29 @@
+﻿__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+
+runs/
+datasets/**
+.yolo-config/
+results/*.csv
+results/*.onnx
+results/*.pt
+results/*.engine
+results/*.torchscript
+results/*.json
+
+*.log
+*.tmp
+*.bak
+
+# Keep original datasets out of version control when the repo sits beside them.
+../Aircraft Surface Defect Detection.v1i.yolov5pytorch/
+../aircraft-skin-defects-new-dataset.v1i.yolov5pytorch/
+../aircraft_skin_defects.v1i.yolov5pytorch/
+../YOLO.v1i.yolov11/

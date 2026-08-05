@@ -1,0 +1,220 @@
+{
+    "suite_id": "aircraft_ai_dataset_mainline",
+    "description": "3-class baseline and ablation line for Aircraft AI Dataset (Dataset I style public benchmark).",
+    "results_csv": "results/aircraft_ai_dataset_mainline.csv",
+    "target_class_names": [
+        "missing-rivet",
+        "rust",
+        "scratch"
+    ],
+    "dataset_yaml": "datasets/supplementary_3cls/aircraft_ai_dataset_3cls/data.yaml",
+    "project": "runs/aircraft_ai_mainline",
+    "train_defaults": {
+        "imgsz": 640,
+        "epochs": 100,
+        "batch": 16,
+        "device": "auto",
+        "workers": 0,
+        "seed": 0,
+        "deterministic": true,
+        "optimizer": "auto",
+        "amp": true,
+        "plots": true,
+        "val": true,
+        "save": true,
+        "exist_ok": false
+    },
+    "metadata_defaults": {
+        "experiment_group": "aircraft_ai_dataset_mainline",
+        "dataset_role": "main_baseline_dataset",
+        "backbone_variant": "yolo11_default",
+        "feature_variant": "default",
+        "neck_variant": "default",
+        "loss_variant": "default",
+        "assigner_variant": "default",
+        "notes": "Keep dataset split, imgsz, batch, epochs, optimizer and seed fixed across the entire 3-class line."
+    },
+    "experiments": [
+        {
+            "experiment_id": "B0",
+            "name": "B0_yolo11n_default",
+            "title": "Official YOLO11n baseline",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "default_official"
+            },
+            "overrides": {}
+        },
+        {
+            "experiment_id": "B1",
+            "name": "B1_yolo11n_texture_preserving",
+            "title": "Weak-texture friendly baseline",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "weak_texture_preserving"
+            },
+            "overrides": {
+                "degrees": 1.0,
+                "translate": 0.05,
+                "scale": 0.2,
+                "perspective": 0.0003,
+                "fliplr": 0.5,
+                "flipud": 0.0,
+                "hsv_h": 0.01,
+                "hsv_s": 0.3,
+                "hsv_v": 0.2,
+                "mosaic": 0.2,
+                "mixup": 0.0,
+                "erasing": 0.0,
+                "close_mosaic": 10
+            }
+        },
+        {
+            "experiment_id": "M1",
+            "name": "M1_yolo11n_neck_wt",
+            "title": "Neck WT refinement on original dataset",
+            "ready": true,
+            "model": "custom_yolo/models/yolo11n_neck_wt.yaml",
+            "pretrained": "../yolo11n.pt",
+            "metadata": {
+                "augment_profile": "weak_texture_preserving",
+                "feature_variant": "wtconv_neck_refine",
+                "neck_variant": "wt_neck_refine",
+                "notes": "Inject wavelet refinement into neck fusion to strengthen weak texture cues."
+            },
+            "overrides": {
+                "degrees": 1.0,
+                "translate": 0.05,
+                "scale": 0.2,
+                "perspective": 0.0003,
+                "fliplr": 0.5,
+                "flipud": 0.0,
+                "hsv_h": 0.01,
+                "hsv_s": 0.3,
+                "hsv_v": 0.2,
+                "mosaic": 0.2,
+                "mixup": 0.0,
+                "erasing": 0.0,
+                "close_mosaic": 10
+            }
+        },
+        {
+            "experiment_id": "M2",
+            "name": "M2_yolo11n_wtconv",
+            "title": "WTConv backbone downsampling",
+            "ready": true,
+            "model": "custom_yolo/models/yolo11n_dwt.yaml",
+            "pretrained": "../yolo11n.pt",
+            "metadata": {
+                "augment_profile": "weak_texture_preserving",
+                "feature_variant": "wtconv_bypass",
+                "notes": "Replace key stride-2 downsampling with wavelet-assisted fusion."
+            },
+            "overrides": {
+                "degrees": 1.0,
+                "translate": 0.05,
+                "scale": 0.2,
+                "perspective": 0.0003,
+                "fliplr": 0.5,
+                "flipud": 0.0,
+                "hsv_h": 0.01,
+                "hsv_s": 0.3,
+                "hsv_v": 0.2,
+                "mosaic": 0.2,
+                "mixup": 0.0,
+                "erasing": 0.0,
+                "close_mosaic": 10
+            }
+        },
+        {
+            "experiment_id": "M3",
+            "name": "M3_yolo11n_wtconv_nwdloss",
+            "title": "WTConv plus NWD loss",
+            "ready": true,
+            "model": "custom_yolo/models/yolo11n_dwt.yaml",
+            "pretrained": "../yolo11n.pt",
+            "metadata": {
+                "augment_profile": "weak_texture_preserving",
+                "feature_variant": "wtconv_bypass",
+                "loss_variant": "nwd_loss",
+                "notes": "Use NWD-based localization supervision to help small and elongated defect boxes."
+            },
+            "overrides": {
+                "degrees": 1.0,
+                "translate": 0.05,
+                "scale": 0.2,
+                "perspective": 0.0003,
+                "fliplr": 0.5,
+                "flipud": 0.0,
+                "hsv_h": 0.01,
+                "hsv_s": 0.3,
+                "hsv_v": 0.2,
+                "mosaic": 0.2,
+                "mixup": 0.0,
+                "erasing": 0.0,
+                "close_mosaic": 10
+            }
+        },
+        {
+            "experiment_id": "M4",
+            "name": "M4_yolo11n_wtconv_nwdassign",
+            "title": "WTConv plus NWD cooperative supervision",
+            "ready": true,
+            "model": "custom_yolo/models/yolo11n_dwt.yaml",
+            "pretrained": "../yolo11n.pt",
+            "metadata": {
+                "augment_profile": "weak_texture_preserving",
+                "feature_variant": "wtconv_bypass",
+                "loss_variant": "nwd_loss",
+                "assigner_variant": "nwd_assigner",
+                "notes": "Combine NWD loss and NWD-aware assigner for harder tiny-object matching."
+            },
+            "overrides": {
+                "degrees": 1.0,
+                "translate": 0.05,
+                "scale": 0.2,
+                "perspective": 0.0003,
+                "fliplr": 0.5,
+                "flipud": 0.0,
+                "hsv_h": 0.01,
+                "hsv_s": 0.3,
+                "hsv_v": 0.2,
+                "mosaic": 0.2,
+                "mixup": 0.0,
+                "erasing": 0.0,
+                "close_mosaic": 10
+            }
+        },
+        {
+            "experiment_id": "M5",
+            "name": "M5_yolo11n_wtconv_repneck_final",
+            "title": "Final structure with WTConv, NWD and Rep neck",
+            "ready": true,
+            "model": "custom_yolo/models/yolo11n_dwt_repneck.yaml",
+            "pretrained": "../yolo11n.pt",
+            "metadata": {
+                "augment_profile": "weak_texture_preserving",
+                "feature_variant": "wtconv_bypass",
+                "neck_variant": "rep_neck",
+                "loss_variant": "nwd_loss",
+                "assigner_variant": "nwd_assigner",
+                "notes": "Final candidate model that combines structural and supervision-side enhancements."
+            },
+            "overrides": {
+                "degrees": 1.0,
+                "translate": 0.05,
+                "scale": 0.2,
+                "perspective": 0.0003,
+                "fliplr": 0.5,
+                "flipud": 0.0,
+                "hsv_h": 0.01,
+                "hsv_s": 0.3,
+                "hsv_v": 0.2,
+                "mosaic": 0.2,
+                "mixup": 0.0,
+                "erasing": 0.0,
+                "close_mosaic": 10
+            }
+        }
+    ]
+}

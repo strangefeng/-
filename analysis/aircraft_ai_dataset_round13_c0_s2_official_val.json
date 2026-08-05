@@ -1,0 +1,27 @@
+{
+  "title": "R13-C0 official val for S2",
+  "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round12_automation\\S2_yolo11n_i800_slice512_train3\\weights\\best.pt",
+  "dataset_yaml": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\supplementary_3cls\\aircraft_ai_dataset_3cls\\data.yaml",
+  "split": "val",
+  "imgsz": 800,
+  "device": "0",
+  "precision": 0.774816650582708,
+  "recall": 0.7328190180519187,
+  "map50": 0.7600239673918363,
+  "map50_95": 0.3450067328691675,
+  "class_metrics": {
+    "missing-rivet": {
+      "ap50": 0.6900015187075065,
+      "ap50_95": 0.3010936318326979
+    },
+    "rust": {
+      "ap50": 0.816903142144059,
+      "ap50_95": 0.38284688555226115
+    },
+    "scratch": {
+      "ap50": 0.7731672413239433,
+      "ap50_95": 0.35107968122254335
+    }
+  },
+  "save_dir": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\detect\\val9"
+}

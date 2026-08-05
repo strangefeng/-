@@ -1,0 +1,63 @@
+{
+  "suite_id": "aircraft_ai_dataset_round9_rtdetr",
+  "description": "Round-9 cross-model comparison that keeps the public 3-class dataset and N2-style training recipe fixed while swapping YOLO11n for RT-DETR-L.",
+  "results_csv": "results/aircraft_ai_dataset_round9_rtdetr.csv",
+  "target_class_names": [
+    "missing-rivet",
+    "rust",
+    "scratch"
+  ],
+  "dataset_yaml": "datasets/supplementary_3cls/aircraft_ai_dataset_3cls/data.yaml",
+  "project": "runs/aircraft_ai_round9_rtdetr",
+  "train_defaults": {
+    "imgsz": 800,
+    "epochs": 100,
+    "batch": 4,
+    "device": "auto",
+    "workers": 0,
+    "seed": 0,
+    "deterministic": true,
+    "optimizer": "auto",
+    "amp": true,
+    "plots": true,
+    "val": true,
+    "save": true,
+    "exist_ok": false,
+    "rect": false,
+    "mosaic": 0.0,
+    "erasing": 0.0,
+    "auto_augment": "none",
+    "close_mosaic": 0
+  },
+  "metadata_defaults": {
+    "experiment_group": "aircraft_ai_dataset_round9_rtdetr",
+    "dataset_role": "public_3cls_anchor",
+    "backbone_variant": "rtdetr_l",
+    "feature_variant": "default",
+    "neck_variant": "default",
+    "loss_variant": "default",
+    "assigner_variant": "default",
+    "notes": "Round 9 is a direct cross-model check that asks whether RT-DETR-L can outperform the current YOLO11n N2 anchor on the same public 3-class dataset."
+  },
+  "experiments": [
+    {
+      "experiment_id": "D1",
+      "name": "D1_rtdetr_l_i800_no_mosaic",
+      "title": "RT-DETR-L on the public 3-class dataset with the N2-style no-mosaic recipe",
+      "ready": true,
+      "model": "..\\rtdetr-l.pt",
+      "metadata": {
+        "augment_profile": "n2_style_no_mosaic",
+        "notes": "Keeps the current best public-dataset recipe fixed and changes only the model family to RT-DETR-L."
+      },
+      "overrides": {
+        "imgsz": 800,
+        "batch": 4,
+        "mosaic": 0.0,
+        "erasing": 0.0,
+        "auto_augment": "none",
+        "close_mosaic": 0
+      }
+    }
+  ]
+}

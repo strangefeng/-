@@ -1,0 +1,92 @@
+{
+  "suite_id": "aircraft_ai_dataset_round11_finalline",
+  "description": "Round-11 final mainline that tests data-distribution repair instead of further architectural edits by oversampling missing-rivet train images on the public and targeted-clean branches.",
+  "results_csv": "results/aircraft_ai_dataset_round11_finalline.csv",
+  "target_class_names": [
+    "missing-rivet",
+    "rust",
+    "scratch"
+  ],
+  "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_mrdup_x2_public/data.yaml",
+  "project": "runs/aircraft_ai_round11_finalline",
+  "train_defaults": {
+    "imgsz": 800,
+    "epochs": 100,
+    "batch": 12,
+    "device": "auto",
+    "workers": 0,
+    "seed": 0,
+    "deterministic": true,
+    "optimizer": "auto",
+    "amp": true,
+    "plots": true,
+    "val": true,
+    "save": true,
+    "exist_ok": false,
+    "rect": false,
+    "mosaic": 0.0,
+    "erasing": 0.0,
+    "auto_augment": "none",
+    "close_mosaic": 0
+  },
+  "metadata_defaults": {
+    "experiment_group": "aircraft_ai_dataset_round11_finalline",
+    "dataset_role": "missing_rivet_oversample",
+    "backbone_variant": "yolo11_default",
+    "feature_variant": "default",
+    "neck_variant": "default",
+    "loss_variant": "default",
+    "assigner_variant": "default",
+    "notes": "Round 11 treats class-distribution imbalance as the likely bottleneck and keeps the N2 recipe fixed while oversampling missing-rivet train images."
+  },
+  "experiments": [
+    {
+      "experiment_id": "O1",
+      "name": "O1_yolo11n_i800_public_mrdup_x2",
+      "title": "Public branch with missing-rivet train-image oversampling x2",
+      "ready": true,
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_mrdup_x2_public/data.yaml",
+      "metadata": {
+        "augment_profile": "n2_public_mrdup_x2",
+        "dataset_role": "public_mrdup_x2",
+        "notes": "Duplicates train images containing missing-rivet once so the class appears in more batches without changing val/test."
+      },
+      "overrides": {
+        "imgsz": 800,
+        "batch": 12
+      }
+    },
+    {
+      "experiment_id": "O2",
+      "name": "O2_yolo11n_i800_public_mrdup_x3",
+      "title": "Public branch with missing-rivet train-image oversampling x3",
+      "ready": true,
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_mrdup_x3_public/data.yaml",
+      "metadata": {
+        "augment_profile": "n2_public_mrdup_x3",
+        "dataset_role": "public_mrdup_x3",
+        "notes": "Stronger public-branch oversampling to test whether missing-rivet needs more aggressive train-time exposure."
+      },
+      "overrides": {
+        "imgsz": 800,
+        "batch": 12
+      }
+    },
+    {
+      "experiment_id": "O3",
+      "name": "O3_yolo11n_i800_targetedclean_mrdup_x2",
+      "title": "Targeted-clean branch with missing-rivet train-image oversampling x2",
+      "ready": true,
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_manual_clean_v1_targeted_mrdup_x2/data.yaml",
+      "metadata": {
+        "augment_profile": "n2_targetedclean_mrdup_x2",
+        "dataset_role": "manual_clean_v1_targeted_mrdup_x2",
+        "notes": "Combines the best available train-only cleanup branch with moderate missing-rivet oversampling to test whether cleaner labels unlock the class-balance gain."
+      },
+      "overrides": {
+        "imgsz": 800,
+        "batch": 12
+      }
+    }
+  ]
+}

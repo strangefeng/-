@@ -1,0 +1,12 @@
+class_name,error_type,issue_count,image_count,max_confidence,priority_score,recommended_action
+missing-rivet,missing_label,33,27,0.829985,268.15,优先核查是否漏标，若确认是真缺陷则补框并补类别。
+missing-rivet,oversized_box,8,7,0.62573,27.129,优先缩框，去掉过多背景，统一边界风格。
+missing-rivet,wrong_class,3,2,0.582215,20.911,优先核查类别定义，必要时改类而不是重画框。
+missing-rivet,shifted_box,1,1,0.564578,6.823,优先微调框位置和边界，使框更贴合缺陷主体。
+rust,missing_label,52,45,0.835659,420.178,优先核查是否漏标，若确认是真缺陷则补框并补类别。
+rust,oversized_box,94,86,0.785695,285.928,优先缩框，去掉过多背景，统一边界风格。
+rust,wrong_class,6,6,0.817805,40.089,优先核查类别定义，必要时改类而不是重画框。
+rust,shifted_box,3,3,0.71481,15.574,优先微调框位置和边界，使框更贴合缺陷主体。
+scratch,missing_label,44,40,0.772109,355.861,优先核查是否漏标，若确认是真缺陷则补框并补类别。
+scratch,oversized_box,46,45,0.811522,142.058,优先缩框，去掉过多背景，统一边界风格。
+scratch,wrong_class,6,6,0.657945,39.29,优先核查类别定义，必要时改类而不是重画框。

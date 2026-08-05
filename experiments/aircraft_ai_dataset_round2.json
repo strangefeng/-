@@ -1,0 +1,109 @@
+{
+    "suite_id": "aircraft_ai_dataset_round2",
+    "description": "Round-2 experiments focusing on resolution and training strategy, using B0 from the first round as the anchor baseline.",
+    "results_csv": "results/aircraft_ai_dataset_round2.csv",
+    "target_class_names": [
+        "missing-rivet",
+        "rust",
+        "scratch"
+    ],
+    "dataset_yaml": "datasets/supplementary_3cls/aircraft_ai_dataset_3cls/data.yaml",
+    "project": "runs/aircraft_ai_round2",
+    "train_defaults": {
+        "imgsz": 800,
+        "epochs": 100,
+        "batch": 12,
+        "device": "auto",
+        "workers": 0,
+        "seed": 0,
+        "deterministic": true,
+        "optimizer": "auto",
+        "amp": true,
+        "plots": true,
+        "val": true,
+        "save": true,
+        "exist_ok": false
+    },
+    "metadata_defaults": {
+        "experiment_group": "aircraft_ai_dataset_round2",
+        "dataset_role": "round2_candidate",
+        "backbone_variant": "yolo11_default",
+        "feature_variant": "default",
+        "neck_variant": "default",
+        "loss_variant": "default",
+        "assigner_variant": "default",
+        "notes": "Round 2 focuses on resolution and conservative augmentation because the first-round structural variants all underperformed the official baseline."
+    },
+    "experiments": [
+        {
+            "experiment_id": "R1",
+            "name": "R1_yolo11n_i800_default",
+            "title": "Higher-resolution baseline at 800",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "default_official",
+                "notes": "Increase resolution to improve small-object detail while keeping the official training strategy."
+            },
+            "overrides": {
+                "imgsz": 800,
+                "batch": 12
+            }
+        },
+        {
+            "experiment_id": "R2",
+            "name": "R2_yolo11n_i800_conservative_aug",
+            "title": "800 resolution with conservative defect-friendly augmentation",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "highres_conservative",
+                "notes": "Use 800 resolution plus milder geometry and color perturbations for weak-texture defects."
+            },
+            "overrides": {
+                "imgsz": 800,
+                "batch": 12,
+                "degrees": 0.5,
+                "translate": 0.03,
+                "scale": 0.15,
+                "perspective": 0.0001,
+                "fliplr": 0.5,
+                "flipud": 0.0,
+                "hsv_h": 0.005,
+                "hsv_s": 0.2,
+                "hsv_v": 0.15,
+                "mosaic": 0.1,
+                "mixup": 0.0,
+                "erasing": 0.0,
+                "auto_augment": "none",
+                "close_mosaic": 10
+            }
+        },
+        {
+            "experiment_id": "R3",
+            "name": "R3_yolo11n_i960_conservative_aug",
+            "title": "960 resolution with conservative augmentation",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "very_highres_conservative",
+                "notes": "Test whether pushing resolution higher benefits missing-rivet and scratch more than it hurts optimization stability."
+            },
+            "overrides": {
+                "imgsz": 960,
+                "batch": 8,
+                "degrees": 0.5,
+                "translate": 0.03,
+                "scale": 0.12,
+                "perspective": 0.0001,
+                "fliplr": 0.5,
+                "flipud": 0.0,
+                "hsv_h": 0.005,
+                "hsv_s": 0.2,
+                "hsv_v": 0.15,
+                "mosaic": 0.05,
+                "mixup": 0.0,
+                "erasing": 0.0,
+                "auto_augment": "none",
+                "close_mosaic": 10
+            }
+        }
+    ]
+}

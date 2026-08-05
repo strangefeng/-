@@ -1,0 +1,1 @@
+stage=M1 state=completed log=D:\桌面\毕设\数据集\yolo-baseline-repro\logs\M1_formal.log 

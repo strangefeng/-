@@ -1,0 +1,76 @@
+{
+  "suite_id": "aircraft_ai_dataset_round7",
+  "description": "Round-7 targeted-cleaning suite that keeps the N2 recipe fixed and tests whether manual label cleanup alone can beat the public 3-class anchor.",
+  "results_csv": "results/aircraft_ai_dataset_round7.csv",
+  "target_class_names": [
+    "missing-rivet",
+    "rust",
+    "scratch"
+  ],
+  "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_manual_clean_v1_pilot/data.yaml",
+  "project": "runs/aircraft_ai_round7",
+  "train_defaults": {
+    "imgsz": 800,
+    "epochs": 100,
+    "batch": 12,
+    "device": "auto",
+    "workers": 0,
+    "seed": 0,
+    "deterministic": true,
+    "optimizer": "auto",
+    "amp": true,
+    "plots": true,
+    "val": true,
+    "save": true,
+    "exist_ok": false,
+    "rect": false,
+    "mosaic": 0.0,
+    "erasing": 0.0,
+    "auto_augment": "none",
+    "close_mosaic": 0
+  },
+  "metadata_defaults": {
+    "experiment_group": "aircraft_ai_dataset_round7",
+    "dataset_role": "round7_candidate",
+    "backbone_variant": "yolo11_default",
+    "feature_variant": "default",
+    "neck_variant": "default",
+    "loss_variant": "default",
+    "assigner_variant": "default",
+    "notes": "Round 7 freezes the N2 recipe and tests whether targeted manual label cleanup is strong enough to outperform the current public-dataset anchor."
+  },
+  "experiments": [
+    {
+      "experiment_id": "G1",
+      "name": "G1_yolo11n_i800_manualclean_pilot_n2",
+      "title": "N2 recipe on pilot manually cleaned v1 dataset",
+      "ready": true,
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_manual_clean_v1_pilot/data.yaml",
+      "metadata": {
+        "augment_profile": "manual_clean_pilot_n2",
+        "dataset_role": "manual_clean_v1_pilot",
+        "notes": "Pilot round-7 run that isolates label-cleaning gains by retraining the exact N2 recipe on the currently verified cleaned dataset copy."
+      },
+      "overrides": {
+        "imgsz": 800,
+        "batch": 12
+      }
+    },
+    {
+      "experiment_id": "G2",
+      "name": "G2_yolo11n_i800_manualclean_targeted_n2",
+      "title": "N2 recipe after expanded targeted cleanup",
+      "ready": true,
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_manual_clean_v1_targeted/data.yaml",
+      "metadata": {
+        "augment_profile": "manual_clean_targeted_n2",
+        "dataset_role": "manual_clean_v1_targeted",
+        "notes": "Round-7 targeted-cleanup branch built from the train-only high-risk review pack after manual review decisions removed unstable tiny-box labels while keeping validation/test untouched."
+      },
+      "overrides": {
+        "imgsz": 800,
+        "batch": 12
+      }
+    }
+  ]
+}
