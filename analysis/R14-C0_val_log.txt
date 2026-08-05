@@ -1,0 +1,50 @@
+Ultralytics 8.3.39 🚀 Python-3.11.14 torch-2.6.0+cu124 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+YOLO11n summary (fused): 238 layers, 2,582,737 parameters, 0 gradients, 6.3 GFLOPs
+                   all        197       1175      0.782      0.707      0.744      0.352
+Speed: 0.4ms preprocess, 4.3ms inference, 0.0ms loss, 1.3ms postprocess per image
+{
+  "title": "R14-C0 official val for N2",
+  "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round4\\N2_yolo11n_i800_no_mosaic\\weights\\best.pt",
+  "dataset_yaml": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\supplementary_3cls\\aircraft_ai_dataset_3cls\\data.yaml",
+  "split": "val",
+  "imgsz": 800,
+  "device": "0",
+  "precision": 0.781996329020263,
+  "recall": 0.7067251016459931,
+  "map50": 0.7443981319314922,
+  "map50_95": 0.35222229306598973,
+  "class_metrics": {
+    "missing-rivet": {
+      "ap50": 0.6551007588303368,
+      "ap50_95": 0.3052432772702466
+    },
+    "rust": {
+      "ap50": 0.813950198396567,
+      "ap50_95": 0.40016193913241727
+    },
+    "scratch": {
+      "ap50": 0.7641434385675728,
+      "ap50_95": 0.3512616627953052
+    }
+  },
+  "save_dir": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\detect\\val12"
+}
+
+
+[34m[1mval: [0mScanning D:\����\����\���ݼ�\Aircraft AI Dataset.v1i.yolov11\valid\labels.cache... 197 images, 0 backgrounds, 0 corrupt: 100%|��������������������| 197/197 [00:00<?, ?it/s]
+[34m[1mval: [0mScanning D:\����\����\���ݼ�\Aircraft AI Dataset.v1i.yolov11\valid\labels.cache... 197 images, 0 backgrounds, 0 corrupt: 100%|��������������������| 197/197 [00:00<?, ?it/s]
+
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/13 [00:00<?, ?it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   8%|��         | 1/13 [00:00<00:03,  3.35it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  15%|����        | 2/13 [00:00<00:02,  5.33it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  23%|������       | 3/13 [00:00<00:01,  6.53it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  31%|������       | 4/13 [00:00<00:01,  7.37it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  38%|��������      | 5/13 [00:00<00:01,  7.94it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  46%|����������     | 6/13 [00:00<00:00,  8.36it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  54%|������������    | 7/13 [00:00<00:00,  8.67it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  62%|��������������   | 8/13 [00:01<00:00,  8.85it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  69%|��������������   | 9/13 [00:01<00:00,  9.03it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  77%|����������������  | 10/13 [00:01<00:00,  9.17it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  85%|������������������ | 11/13 [00:01<00:00,  9.26it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  92%|��������������������| 12/13 [00:01<00:00,  9.29it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|��������������������| 13/13 [00:01<00:00,  8.37it/s]

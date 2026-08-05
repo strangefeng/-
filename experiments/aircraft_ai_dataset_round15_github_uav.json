@@ -1,0 +1,123 @@
+{
+  "suite_id": "aircraft_ai_dataset_round15_github_uav",
+  "description": "Round-15 applies the useful parts of UAV/VisDrone small-object detection practice to the aircraft defect dataset: preserve small-object pixels, keep the validated N2 augmentation policy, and prioritize label quality before more architecture changes.",
+  "results_csv": "results/aircraft_ai_dataset_round15_github_uav.csv",
+  "target_class_names": [
+    "missing-rivet",
+    "rust",
+    "scratch"
+  ],
+  "dataset_yaml": "datasets/supplementary_3cls/aircraft_ai_dataset_3cls/data.yaml",
+  "project": "runs/aircraft_ai_round15_github_uav",
+  "train_defaults": {
+    "imgsz": 800,
+    "epochs": 100,
+    "batch": 12,
+    "device": "auto",
+    "workers": 0,
+    "seed": 42,
+    "patience": 30,
+    "deterministic": true,
+    "optimizer": "auto",
+    "amp": true,
+    "plots": true,
+    "val": true,
+    "save": true,
+    "exist_ok": false,
+    "rect": false,
+    "cache": false,
+    "pretrained": true,
+    "mosaic": 0.0,
+    "erasing": 0.0,
+    "mixup": 0.0,
+    "copy_paste": 0.0,
+    "auto_augment": "none",
+    "close_mosaic": 0,
+    "hsv_h": 0.015,
+    "hsv_s": 0.4,
+    "hsv_v": 0.2,
+    "degrees": 0.0,
+    "translate": 0.05,
+    "scale": 0.2,
+    "shear": 0.0,
+    "perspective": 0.0,
+    "flipud": 0.0,
+    "fliplr": 0.5
+  },
+  "metadata_defaults": {
+    "experiment_group": "aircraft_ai_dataset_round15_github_uav",
+    "dataset_role": "github_uav_transfer_candidate",
+    "backbone_variant": "yolo11_default",
+    "feature_variant": "default",
+    "neck_variant": "default",
+    "loss_variant": "default",
+    "assigner_variant": "default",
+    "notes": "Inspired by VisDrone/UAV small-object work, but constrained by prior local evidence: no sliced inference only, no new P2/attention branch, no copy-paste by default."
+  },
+  "experiments": [
+    {
+      "experiment_id": "R15-C1_CleanV3_N2",
+      "name": "R15_C1_CleanV3_N2",
+      "title": "N2 recipe on targeted manual-clean v3 labels",
+      "ready": true,
+      "model": "D:/桌面/毕设/数据集/yolo11n.pt",
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_manual_clean_v3_targeted90/data.yaml",
+      "metadata": {
+        "augment_profile": "n2_clean_v3_targeted90",
+        "dataset_role": "manual_clean_v3_targeted90",
+        "notes": "Highest-priority candidate. Keeps the current best N2 recipe and applies the round14 finding that label consistency is the main bottleneck."
+      }
+    },
+    {
+      "experiment_id": "R15-C2_FitWithinV2_N2",
+      "name": "R15_C2_FitWithinV2_N2",
+      "title": "N2 recipe on fit-within detail-preserving dataset",
+      "ready": true,
+      "model": "D:/桌面/毕设/数据集/yolo11n.pt",
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_focuscrop_v2_fit/data.yaml",
+      "metadata": {
+        "augment_profile": "n2_fit_within_v2",
+        "dataset_role": "fit_within_detail_preserving",
+        "notes": "Tests the UAV small-object lesson that preserving effective object pixels can matter more than heavier model changes."
+      }
+    },
+    {
+      "experiment_id": "R15-C3_MRdupX2_N2",
+      "name": "R15_C3_MRdupX2_N2",
+      "title": "N2 recipe with conservative missing-rivet rebalance",
+      "ready": true,
+      "model": "D:/桌面/毕设/数据集/yolo11n.pt",
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_manual_clean_v1_targeted_mrdup_x2/data.yaml",
+      "metadata": {
+        "augment_profile": "n2_manual_clean_mrdup_x2",
+        "dataset_role": "manual_clean_missing_rivet_rebalance",
+        "notes": "Low-risk class-balance candidate for the smallest and weakest class. Uses existing curated data instead of synthetic copy-paste."
+      }
+    },
+    {
+      "experiment_id": "R15-C4_N2FinetuneLowLR",
+      "name": "R15_C4_N2FinetuneLowLR",
+      "title": "Low-LR continuation from the N2 anchor",
+      "ready": true,
+      "model": "D:/桌面/毕设/数据集/yolo-baseline-repro/runs/aircraft_ai_round4/N2_yolo11n_i800_no_mosaic/weights/best.pt",
+      "dataset_yaml": "datasets/supplementary_3cls/aircraft_ai_dataset_3cls/data.yaml",
+      "metadata": {
+        "augment_profile": "n2_low_lr_continuation",
+        "dataset_role": "n2_anchor_finetune",
+        "notes": "Starts from the strongest N2 checkpoint and continues with a small AdamW learning rate to test whether the baseline can be nudged above the existing 0.352565 anchor."
+      },
+      "overrides": {
+        "epochs": 60,
+        "patience": 20,
+        "optimizer": "AdamW",
+        "lr0": 0.00025,
+        "lrf": 0.01,
+        "seed": 42,
+        "mosaic": 0.0,
+        "erasing": 0.0,
+        "auto_augment": "none",
+        "close_mosaic": 0
+      }
+    }
+  ]
+}

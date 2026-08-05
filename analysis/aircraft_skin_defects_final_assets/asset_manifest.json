@@ -1,0 +1,23 @@
+{
+  "summary_md": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\analysis\\aircraft_skin_defects_mainline_final_summary.md",
+  "review_md": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\analysis\\aircraft_skin_defects_manual_review_paper_version.md",
+  "figures": {
+    "class_ap95": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\analysis\\aircraft_skin_defects_final_assets\\exp_a_class_ap95_comparison.png",
+    "distribution": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\analysis\\aircraft_skin_defects_final_assets\\exp_a_train_distribution_shift.png",
+    "qualitative": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\analysis\\aircraft_skin_defects_final_assets\\exp_a_qualitative_comparison_panel.png"
+  },
+  "original_train_counts": {
+    "crack": 332,
+    "dent": 447,
+    "missing-head": 331,
+    "paint-off": 267,
+    "scratch": 75
+  },
+  "copypaste_train_counts": {
+    "crack": 664,
+    "dent": 898,
+    "missing-head": 660,
+    "paint-off": 526,
+    "scratch": 1110
+  }
+}

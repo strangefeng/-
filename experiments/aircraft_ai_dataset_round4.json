@@ -1,0 +1,144 @@
+{
+    "suite_id": "aircraft_ai_dataset_round4",
+    "description": "Training-strategy round built on the R1 800-resolution anchor, focusing on weak augmentation and mosaic/erasing ablations instead of structural changes.",
+    "results_csv": "results/aircraft_ai_dataset_round4.csv",
+    "target_class_names": [
+        "missing-rivet",
+        "rust",
+        "scratch"
+    ],
+    "dataset_yaml": "datasets/supplementary_3cls/aircraft_ai_dataset_3cls/data.yaml",
+    "project": "runs/aircraft_ai_round4",
+    "train_defaults": {
+        "imgsz": 800,
+        "epochs": 100,
+        "batch": 12,
+        "device": "auto",
+        "workers": 0,
+        "seed": 0,
+        "deterministic": true,
+        "optimizer": "auto",
+        "amp": true,
+        "plots": true,
+        "val": true,
+        "save": true,
+        "exist_ok": false,
+        "rect": false
+    },
+    "metadata_defaults": {
+        "experiment_group": "aircraft_ai_dataset_round4",
+        "dataset_role": "round4_candidate",
+        "backbone_variant": "yolo11_default",
+        "feature_variant": "default",
+        "neck_variant": "default",
+        "loss_variant": "default",
+        "assigner_variant": "default",
+        "notes": "Round 4 keeps the proven 800-resolution model and only changes data augmentation or training schedule."
+    },
+    "experiments": [
+        {
+            "experiment_id": "N1",
+            "name": "N1_yolo11n_i800_weak_aug",
+            "title": "R1 with weak defect-friendly augmentation",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "weak_aug",
+                "notes": "Reduce color and geometric augmentation strength to preserve weak-texture defect cues."
+            },
+            "overrides": {
+                "imgsz": 800,
+                "batch": 12,
+                "degrees": 0.0,
+                "translate": 0.03,
+                "scale": 0.2,
+                "perspective": 0.0,
+                "fliplr": 0.5,
+                "flipud": 0.0,
+                "hsv_h": 0.01,
+                "hsv_s": 0.3,
+                "hsv_v": 0.2,
+                "mosaic": 0.2,
+                "mixup": 0.0,
+                "erasing": 0.0,
+                "auto_augment": "none",
+                "close_mosaic": 10
+            }
+        },
+        {
+            "experiment_id": "N2",
+            "name": "N2_yolo11n_i800_no_mosaic",
+            "title": "R1 without mosaic and erasing",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "no_mosaic_no_erasing",
+                "notes": "Keep most of the default R1 recipe but disable mosaic, erasing and randaugment to test whether detail destruction is the main issue."
+            },
+            "overrides": {
+                "imgsz": 800,
+                "batch": 12,
+                "mosaic": 0.0,
+                "erasing": 0.0,
+                "auto_augment": "none",
+                "close_mosaic": 0
+            }
+        },
+        {
+            "experiment_id": "N3",
+            "name": "N3_yolo11n_i800_weak_nomosaic",
+            "title": "R1 with weak augmentation and no mosaic",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "weak_aug_no_mosaic",
+                "notes": "Combine weaker color/geometry perturbations with a fully disabled mosaic pipeline."
+            },
+            "overrides": {
+                "imgsz": 800,
+                "batch": 12,
+                "degrees": 0.0,
+                "translate": 0.02,
+                "scale": 0.15,
+                "perspective": 0.0,
+                "fliplr": 0.5,
+                "flipud": 0.0,
+                "hsv_h": 0.008,
+                "hsv_s": 0.25,
+                "hsv_v": 0.15,
+                "mosaic": 0.0,
+                "mixup": 0.0,
+                "erasing": 0.0,
+                "auto_augment": "none",
+                "close_mosaic": 0
+            }
+        },
+        {
+            "experiment_id": "N4",
+            "name": "N4_yolo11n_i800_weak_nomosaic_long",
+            "title": "N3 with a longer training schedule",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "weak_aug_no_mosaic_longer",
+                "notes": "Use the most conservative augmentation profile and extend training to test whether the simpler schedule needs more epochs to converge."
+            },
+            "overrides": {
+                "imgsz": 800,
+                "batch": 12,
+                "epochs": 140,
+                "patience": 40,
+                "degrees": 0.0,
+                "translate": 0.02,
+                "scale": 0.15,
+                "perspective": 0.0,
+                "fliplr": 0.5,
+                "flipud": 0.0,
+                "hsv_h": 0.008,
+                "hsv_s": 0.25,
+                "hsv_v": 0.15,
+                "mosaic": 0.0,
+                "mixup": 0.0,
+                "erasing": 0.0,
+                "auto_augment": "none",
+                "close_mosaic": 0
+            }
+        }
+    ]
+}

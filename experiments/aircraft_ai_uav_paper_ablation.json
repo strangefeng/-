@@ -1,0 +1,155 @@
+{
+  "suite_id": "aircraft_ai_uav_paper_ablation",
+  "description": "Ablation and small-defect localization experiments on the cleaned UAV aircraft skin defect dataset.",
+  "results_csv": "results/aircraft_ai_uav_paper_ablation.csv",
+  "target_class_names": [
+    "missing-rivet",
+    "rust",
+    "scratch"
+  ],
+  "dataset_yaml": "datasets/generated_3cls/aircraft_ai_uav_clean_split.yaml",
+  "project": "runs/aircraft_ai_uav_paper_ablation",
+  "train_defaults": {
+    "imgsz": 800,
+    "epochs": 100,
+    "batch": 8,
+    "device": "auto",
+    "workers": 0,
+    "seed": 42,
+    "deterministic": true,
+    "optimizer": "auto",
+    "amp": true,
+    "plots": true,
+    "val": true,
+    "save": true,
+    "exist_ok": false,
+    "rect": false,
+    "cache": false,
+    "pretrained": true,
+    "mosaic": 0.0,
+    "erasing": 0.0,
+    "mixup": 0.0,
+    "auto_augment": "none",
+    "flipud": 0.0,
+    "close_mosaic": 0,
+    "patience": 30
+  },
+  "metadata_defaults": {
+    "experiment_group": "aircraft_ai_uav_paper_ablation",
+    "dataset_id": "aircraft_ai_uav_clean_split",
+    "dataset_role": "clean_train_clean_eval",
+    "augment_profile": "n2_no_mosaic_no_erasing",
+    "feature_variant": "default",
+    "backbone_variant": "yolo26n",
+    "neck_variant": "default",
+    "loss_variant": "default",
+    "assigner_variant": "default",
+    "notes": "Ablation suite around YOLO26n, NWD localization, and existing small-object branches."
+  },
+  "experiments": [
+    {
+      "experiment_id": "A00_YOLO11N",
+      "name": "A00_yolo11n_clean",
+      "title": "YOLO11n clean baseline reference",
+      "ready": true,
+      "model": "yolo11n.pt",
+      "metadata": {
+        "backbone_variant": "yolo11n",
+        "notes": "YOLO11n reference on the unified clean re-split for comparable NWD ablation."
+      }
+    },
+    {
+      "experiment_id": "A00_YOLO11N_NWD_LOSS",
+      "name": "A00_yolo11n_nwd_loss_clean",
+      "title": "YOLO11n with NWD bbox loss",
+      "ready": true,
+      "model": "yolo11n.pt",
+      "metadata": {
+        "backbone_variant": "yolo11n",
+        "loss_variant": "nwd_loss",
+        "notes": "NWD loss on YOLO11n for tiny missing-rivet localization under the unified clean re-split."
+      },
+      "runtime": {
+        "nwd_loss_ratio": 0.25,
+        "nwd_constant": 12.8
+      }
+    },
+    {
+      "experiment_id": "A00_YOLO11N_NWD_ASSIGNER",
+      "name": "A00_yolo11n_nwd_assigner_clean",
+      "title": "YOLO11n with NWD-aware assigner",
+      "ready": true,
+      "model": "yolo11n.pt",
+      "metadata": {
+        "backbone_variant": "yolo11n",
+        "assigner_variant": "nwd_assigner",
+        "notes": "NWD-aware assignment on YOLO11n under the unified clean re-split."
+      },
+      "runtime": {
+        "nwd_assigner_ratio": 0.25,
+        "nwd_constant": 12.8
+      }
+    },
+    {
+      "experiment_id": "A01_YOLO26N",
+      "name": "A01_yolo26n_clean",
+      "title": "YOLO26n clean baseline",
+      "ready": true,
+      "model": "../yolo26n.pt"
+    },
+    {
+      "experiment_id": "A02_YOLO26N_NWD_LOSS",
+      "name": "A02_yolo26n_nwd_loss_clean",
+      "title": "YOLO26n with NWD bbox loss",
+      "ready": true,
+      "model": "../yolo26n.pt",
+      "metadata": {
+        "loss_variant": "nwd_loss",
+        "notes": "NWD loss for tiny missing-rivet localization."
+      },
+      "runtime": {
+        "nwd_loss_ratio": 0.25,
+        "nwd_constant": 12.8
+      }
+    },
+    {
+      "experiment_id": "A03_YOLO26N_NWD_ASSIGNER",
+      "name": "A03_yolo26n_nwd_assigner_clean",
+      "title": "YOLO26n with NWD-aware assigner",
+      "ready": true,
+      "model": "../yolo26n.pt",
+      "metadata": {
+        "assigner_variant": "nwd_assigner",
+        "notes": "NWD-aware task assignment for tiny defects."
+      },
+      "runtime": {
+        "nwd_assigner_ratio": 0.25,
+        "nwd_constant": 12.8
+      }
+    },
+    {
+      "experiment_id": "A04_YOLO11N_P2",
+      "name": "A04_yolo11n_p2_clean",
+      "title": "YOLO11n P2 small-object head reference",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_p2.yaml",
+      "metadata": {
+        "feature_variant": "p2_head",
+        "backbone_variant": "yolo11n",
+        "notes": "Reference P2 branch from previous module experiments."
+      }
+    },
+    {
+      "experiment_id": "A05_YOLO11N_SPD",
+      "name": "A05_yolo11n_spd_clean",
+      "title": "YOLO11n SPD stem reference",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_spd.yaml",
+      "metadata": {
+        "feature_variant": "spd_stem",
+        "backbone_variant": "yolo11n",
+        "notes": "Reference detail-preserving SPD stem from previous module experiments."
+      }
+    }
+  ]
+}

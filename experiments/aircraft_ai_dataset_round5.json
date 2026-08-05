@@ -1,0 +1,104 @@
+{
+    "suite_id": "aircraft_ai_dataset_round5",
+    "description": "Round-5 data-preprocessing comparison suite that tests whether the Fit-within padded export is more useful than the previous stretch export under matched YOLO11n recipes.",
+    "results_csv": "results/aircraft_ai_dataset_round5.csv",
+    "target_class_names": [
+        "missing-rivet",
+        "rust",
+        "scratch"
+    ],
+    "dataset_yaml": "datasets/supplementary_3cls/aircraft_ai_dataset_3cls_v2_fit/data.yaml",
+    "project": "runs/aircraft_ai_round5",
+    "train_defaults": {
+        "imgsz": 640,
+        "epochs": 100,
+        "batch": 16,
+        "device": "auto",
+        "workers": 0,
+        "seed": 0,
+        "deterministic": true,
+        "optimizer": "auto",
+        "amp": true,
+        "plots": true,
+        "val": true,
+        "save": true,
+        "exist_ok": false,
+        "rect": false
+    },
+    "metadata_defaults": {
+        "experiment_group": "aircraft_ai_dataset_round5",
+        "dataset_role": "fit_within_comparison",
+        "backbone_variant": "yolo11_default",
+        "feature_variant": "default",
+        "neck_variant": "default",
+        "loss_variant": "default",
+        "assigner_variant": "default",
+        "notes": "Round 5 keeps the model family fixed and isolates the effect of dataset export preprocessing."
+    },
+    "experiments": [
+        {
+            "experiment_id": "F1",
+            "name": "F1_yolo11n_v2_i640_default",
+            "title": "Fit-within export with official 640 baseline recipe",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "default_640",
+                "notes": "Direct counterpart of the historical B0 baseline, but trained on the v2 fit-within export."
+            },
+            "overrides": {
+                "imgsz": 640,
+                "batch": 16
+            }
+        },
+        {
+            "experiment_id": "F2",
+            "name": "F2_yolo11n_v2_i800_default",
+            "title": "Fit-within export with 800-resolution baseline recipe",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "highres_default",
+                "notes": "Direct counterpart of the historical R1 baseline to test whether fit-within export helps after increasing resolution."
+            },
+            "overrides": {
+                "imgsz": 800,
+                "batch": 12
+            }
+        },
+        {
+            "experiment_id": "F3",
+            "name": "F3_yolo11n_v2_i800_no_mosaic",
+            "title": "Fit-within export with the round-4 best N2 recipe",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "no_mosaic_no_erasing",
+                "notes": "Direct counterpart of N2 to test whether the current best strategy benefits further from fit-within padding."
+            },
+            "overrides": {
+                "imgsz": 800,
+                "batch": 12,
+                "mosaic": 0.0,
+                "erasing": 0.0,
+                "auto_augment": "none",
+                "close_mosaic": 0
+            }
+        },
+        {
+            "experiment_id": "F4",
+            "name": "F4_yolo11n_v2_i640_no_mosaic",
+            "title": "Fit-within export with a conservative 640 no-mosaic recipe",
+            "ready": true,
+            "metadata": {
+                "augment_profile": "default640_no_mosaic_no_erasing",
+                "notes": "Checks whether the new export alone already helps at 640 without relying on higher resolution."
+            },
+            "overrides": {
+                "imgsz": 640,
+                "batch": 16,
+                "mosaic": 0.0,
+                "erasing": 0.0,
+                "auto_augment": "none",
+                "close_mosaic": 0
+            }
+        }
+    ]
+}

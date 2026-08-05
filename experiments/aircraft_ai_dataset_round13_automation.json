@@ -1,0 +1,93 @@
+{
+  "suite_id": "aircraft_ai_dataset_round13_automation",
+  "description": "Round-13 S2-oriented refinement experiments focused on slice-size correction, multi-scale slicing, hard negatives, and focaler-IoU localization repair.",
+  "results_csv": "results/aircraft_ai_dataset_round13_automation.csv",
+  "target_class_names": [
+    "missing-rivet",
+    "rust",
+    "scratch"
+  ],
+  "dataset_yaml": "datasets/supplementary_3cls/aircraft_ai_dataset_3cls/data.yaml",
+  "project": "runs/aircraft_ai_round13_automation",
+  "train_defaults": {
+    "imgsz": 800,
+    "epochs": 100,
+    "batch": 12,
+    "device": "auto",
+    "workers": 0,
+    "seed": 42,
+    "patience": 30,
+    "deterministic": true,
+    "optimizer": "auto",
+    "amp": true,
+    "plots": true,
+    "val": true,
+    "save": true,
+    "exist_ok": false,
+    "rect": false,
+    "mosaic": 0.0,
+    "erasing": 0.0,
+    "mixup": 0.0,
+    "copy_paste": 0.0,
+    "auto_augment": "none",
+    "close_mosaic": 0,
+    "hsv_h": 0.015,
+    "hsv_s": 0.4,
+    "hsv_v": 0.2,
+    "degrees": 0.0,
+    "translate": 0.05,
+    "scale": 0.2,
+    "shear": 0.0,
+    "perspective": 0.0,
+    "flipud": 0.0,
+    "fliplr": 0.5
+  },
+  "metadata_defaults": {
+    "experiment_group": "aircraft_ai_dataset_round13_automation",
+    "dataset_role": "round13_refinement_line",
+    "backbone_variant": "yolo11_default",
+    "feature_variant": "default",
+    "neck_variant": "default",
+    "loss_variant": "default",
+    "assigner_variant": "default",
+    "notes": "Round 13 keeps the N2 detail-preserving recipe fixed and only refines slice policy, localization loss, and false-positive suppression."
+  },
+  "experiments": [
+    {
+      "experiment_id": "R13-S2a",
+      "name": "R13_S2a_yolo11n_i800_slice640_o20_train",
+      "title": "Slice640 training with 0.20 overlap",
+      "ready": true,
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_slice640_o20/data.yaml",
+      "metadata": {
+        "augment_profile": "round13_n2_slice640_train",
+        "dataset_role": "slice640_train",
+        "notes": "Tests whether a larger slice restores the context that slice512 lost, especially for rust and unstable missing-rivet cases."
+      }
+    },
+    {
+      "experiment_id": "R13-S2b",
+      "name": "R13_S2b_yolo11n_i800_slice512_640_mix_train",
+      "title": "Slice512 plus Slice640 mixed training",
+      "ready": true,
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_slice512_640_mix/data.yaml",
+      "metadata": {
+        "augment_profile": "round13_n2_slice512_640_mix_train",
+        "dataset_role": "slice512_640_mix_train",
+        "notes": "Checks whether a two-scale sliced train set balances tiny defect recall and broader local context better than a single slice size."
+      }
+    },
+    {
+      "experiment_id": "R13-HN1",
+      "name": "R13_HN1_yolo11n_i800_n2_hardneg50",
+      "title": "N2-style training with 50 hard negatives",
+      "ready": true,
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_hardneg50/data.yaml",
+      "metadata": {
+        "augment_profile": "round13_n2_hardneg50",
+        "dataset_role": "n2_hard_negative_50",
+        "notes": "Adds 50 normal-surface hard negatives to suppress rivet, seam, reflection, and texture-driven false positives."
+      }
+    }
+  ]
+}

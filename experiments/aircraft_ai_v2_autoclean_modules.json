@@ -1,0 +1,96 @@
+{
+  "suite_id": "aircraft_ai_v2_autoclean_modules",
+  "description": "Module ablation on the conservative auto-cleaned Aircraft AI v2 dataset.",
+  "results_csv": "results/aircraft_ai_v2_autoclean_modules.csv",
+  "target_class_names": [
+    "missing-rivet",
+    "rust",
+    "scratch"
+  ],
+  "dataset_yaml": "datasets/generated_3cls/aircraft_ai_v2_cleaneval_cleantrain.yaml",
+  "project": "runs/aircraft_ai_v2_autoclean_modules",
+  "train_defaults": {
+    "imgsz": 800,
+    "epochs": 100,
+    "batch": 8,
+    "device": "auto",
+    "workers": 0,
+    "seed": 42,
+    "deterministic": true,
+    "optimizer": "auto",
+    "amp": true,
+    "plots": true,
+    "val": true,
+    "save": true,
+    "exist_ok": false,
+    "rect": false,
+    "cache": false,
+    "pretrained": true,
+    "mosaic": 0.0,
+    "erasing": 0.0,
+    "mixup": 0.0,
+    "auto_augment": "none",
+    "flipud": 0.0,
+    "close_mosaic": 0,
+    "patience": 30
+  },
+  "metadata_defaults": {
+    "experiment_group": "aircraft_ai_v2_autoclean_modules",
+    "dataset_id": "aircraft_ai_v2_autoclean",
+    "dataset_role": "clean_train_clean_eval",
+    "augment_profile": "n2_no_mosaic_no_erasing",
+    "backbone_variant": "yolo11n",
+    "neck_variant": "default",
+    "loss_variant": "default",
+    "assigner_variant": "default",
+    "notes": "All module tests use the same auto-cleaned train/val split and N2-style augmentation recipe."
+  },
+  "experiments": [
+    {
+      "experiment_id": "M1_P2_HEAD",
+      "name": "M1_p2_head_clean_n2",
+      "title": "Plain P2 small-object head on cleaned labels",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_p2.yaml",
+      "metadata": {
+        "feature_variant": "p2_head",
+        "notes": "Adds a high-resolution P2 detection branch for tiny missing-rivet candidates."
+      }
+    },
+    {
+      "experiment_id": "M2_SPD_STEM",
+      "name": "M2_spd_stem_clean_n2",
+      "title": "SPD detail-preserving stem on cleaned labels",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_spd.yaml",
+      "metadata": {
+        "feature_variant": "spd_stem",
+        "notes": "Replaces early stride-2 downsampling with space-to-depth style detail preservation."
+      }
+    },
+    {
+      "experiment_id": "M3_SPD_DEFECT_P2",
+      "name": "M3_spd_defect_p2_clean_n2",
+      "title": "SPD stem plus defect-aware P2 branch on cleaned labels",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_spd_defect_p2.yaml",
+      "metadata": {
+        "feature_variant": "spd_defect_p2",
+        "neck_variant": "p2_morphology_gate",
+        "notes": "Combines detail-preserving downsampling and high-resolution defect morphology cues."
+      }
+    },
+    {
+      "experiment_id": "M4_SPD_DEFECT_P2_DYFUSE",
+      "name": "M4_spd_defect_p2_dyfuse_clean_n2",
+      "title": "SPD defect-aware P2 branch with dynamic fusion on cleaned labels",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_spd_defect_p2_dyfuse.yaml",
+      "metadata": {
+        "feature_variant": "spd_defect_p2",
+        "neck_variant": "dynamic_fusion",
+        "notes": "Full module candidate with detail-preserving stem, defect-aware P2 branch, and dynamic multi-scale fusion."
+      }
+    }
+  ]
+}

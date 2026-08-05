@@ -1,0 +1,76 @@
+{
+  "suite_id": "aircraft_ai_dataset_round8",
+  "description": "Round-8 final public-dataset validation that expands targeted train-only cleanup and keeps the N2 recipe fixed.",
+  "results_csv": "results/aircraft_ai_dataset_round8.csv",
+  "target_class_names": [
+    "missing-rivet",
+    "rust",
+    "scratch"
+  ],
+  "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_manual_clean_v2_targeted72/data.yaml",
+  "project": "runs/aircraft_ai_round8",
+  "train_defaults": {
+    "imgsz": 800,
+    "epochs": 100,
+    "batch": 12,
+    "device": "auto",
+    "workers": 0,
+    "seed": 0,
+    "deterministic": true,
+    "optimizer": "auto",
+    "amp": true,
+    "plots": true,
+    "val": true,
+    "save": true,
+    "exist_ok": false,
+    "rect": false,
+    "mosaic": 0.0,
+    "erasing": 0.0,
+    "auto_augment": "none",
+    "close_mosaic": 0
+  },
+  "metadata_defaults": {
+    "experiment_group": "aircraft_ai_dataset_round8",
+    "dataset_role": "round8_candidate",
+    "backbone_variant": "yolo11_default",
+    "feature_variant": "default",
+    "neck_variant": "default",
+    "loss_variant": "default",
+    "assigner_variant": "default",
+    "notes": "Round 8 is the final public-dataset validation loop that enlarges the targeted cleanup pool while freezing the N2 recipe."
+  },
+  "experiments": [
+    {
+      "experiment_id": "H1",
+      "name": "H1_yolo11n_i800_manualclean_targeted72_n2",
+      "title": "N2 recipe after 72-sample targeted train-only cleanup",
+      "ready": true,
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_manual_clean_v2_targeted72/data.yaml",
+      "metadata": {
+        "augment_profile": "manual_clean_targeted72_n2",
+        "dataset_role": "manual_clean_v2_targeted72",
+        "notes": "Round-8 main candidate that expands the train-only targeted cleanup pool to the 50-150 sample range while keeping the N2 recipe unchanged."
+      },
+      "overrides": {
+        "imgsz": 800,
+        "batch": 12
+      }
+    },
+    {
+      "experiment_id": "H2",
+      "name": "H2_yolo11n_i800_manualclean_targeted90_n2",
+      "title": "N2 recipe after 90-sample targeted train-only cleanup",
+      "ready": true,
+      "dataset_yaml": "datasets/generated_3cls/aircraft_ai_dataset_3cls_manual_clean_v3_targeted90/data.yaml",
+      "metadata": {
+        "augment_profile": "manual_clean_targeted90_n2",
+        "dataset_role": "manual_clean_v3_targeted90",
+        "notes": "Round-8 fallback candidate that enlarges the suspicious pool further when H1 does not deliver a meaningful improvement over G2."
+      },
+      "overrides": {
+        "imgsz": 800,
+        "batch": 12
+      }
+    }
+  ]
+}

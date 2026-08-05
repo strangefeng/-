@@ -1,0 +1,65 @@
+# Read Check Report
+
+- Dataset YAML: `D:\桌面\毕设\数据集\yolo-baseline-repro\datasets\standardized_5cls\aircraft_skin_defects\data.yaml`
+- Train image directory: `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images`
+- Total images found: `723`
+- Selected for check: `50`
+- Attempted reads: `50`
+- Successful reads: `0`
+- Failed reads: `50`
+- `cv2` import ok: `True`
+- Installed `opencv-python` version: `4.9.0.80`
+- Imported `cv2` version: `4.9.0`
+
+## Failed Files
+
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00004_jpg.rf.65fdb16963b9d98b927398ac42d568a0.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00004_jpg.rf.c580e75b1d990c14d1b0005e3c8f46b2.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00004_jpg.rf.ead09f2e4cb1a530504c850628841ebf.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00005_jpg.rf.944e71abcfcf53a4d084778eb69be1ca.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00005_jpg.rf.bb317412e8c35651aa05b271d94e7a4b.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00005_jpg.rf.f5a9ca8085ea29944a9cbecac793a145.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00006_jpg.rf.0770dab5338b9b5fe2d92341df32198b.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00006_jpg.rf.7b416c72a630c6f15f9184338809bee7.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00006_jpg.rf.cbad6073892e3ca8ff8409a6a6e95d4b.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00007_jpg.rf.9d062560bf530493f42135103531252e.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00007_jpg.rf.a70592bbd75cb19f5477e4838a7106a7.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00007_jpg.rf.f59cbb20c2c212c6273218ae8527b2eb.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00008_jpg.rf.7d065541f0332b9ac17b71bb28050a69.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00008_jpg.rf.b1dbb24acaae02c00aaa4246b8e5ae3b.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00008_jpg.rf.f2cb3966c2b7fffcd3df15de5dcd4d50.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00009_jpg.rf.7082c2f5b124d3353a4e349ffe30cd90.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00009_jpg.rf.b99df4e1140bfe5827477a213a79b492.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00009_jpg.rf.c7c3bf1799237ba84f125b272d7cf46f.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00010_jpg.rf.481b3c74f6d4aa06298ef9486e8ff2c9.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00010_jpg.rf.a25d65bc8229a96c302978389a6d9d6a.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00010_jpg.rf.cfcb870372ead105ec1ab6155fe98e6d.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00011_jpg.rf.4df98dd59a6924b3a602bd270d728f39.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00011_jpg.rf.c5f968bb5cad9fdccfbfc37613410667.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00011_jpg.rf.cac3425650b5279f60928692c225f8f0.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00012_jpg.rf.9ecaaf625d2337c29c8b4d066bafb5e2.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00012_jpg.rf.a81f7b0eed10b86a6383dc82382a92ec.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00012_jpg.rf.ca3ecce560ee399d4fb23c087094372a.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00019_jpg.rf.495f32323c78cf82584e0c1c98b013db.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00019_jpg.rf.9f2629bf473142f913651b3f82ae1be5.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00019_jpg.rf.b119f1b6481ec22c705751eee32fb792.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00021_jpg.rf.97970073adbad32d38aa6c9b7a544750.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00021_jpg.rf.e4ee07eb6836b0c10d3bd57f70f8b7b2.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00021_jpg.rf.f4ed8dc72606c02c59cb4c7722d80623.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00022_jpg.rf.32b7586c41165f5d936dd451938887c3.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00022_jpg.rf.358ca52e9755ec0fd629d04c60cbc49b.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00022_jpg.rf.88fbd0670237ded2a80e7afbf1ef513d.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00024_jpg.rf.253ee134d6bfd860b522611b4288d830.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00024_jpg.rf.34e00bb2566400a12fc654b325c9b642.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00024_jpg.rf.6b7dee13380e41a62c9b157d0bf42ad5.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00025_jpg.rf.0216ef958c32eab6c4423826b530f5f3.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00025_jpg.rf.21786db05549c60f9e92fb023411316b.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00025_jpg.rf.9d8f2e91731d6e891f56e6e825c9297b.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00027_jpg.rf.10089e109df418eefc188d01a563b4ab.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00027_jpg.rf.4fa068158e52a031711041d8d18812ac.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00027_jpg.rf.ac1d89019fec1a5e56c91359b32f9dfc.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00028_jpg.rf.09434185531a31cbb6473e3e5b92de57.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00028_jpg.rf.bebdfec81739f5d6fe641f4e2140d081.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00028_jpg.rf.e01b4779b339399a82f47f8be5e74e61.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00029_jpg.rf.ac20868d1c3968ecb9e092d8e2ff5954.jpg`
+- `D:\桌面\毕设\数据集\aircraft_skin_defects.v1i.yolov5pytorch\train\images\hunter_00029_jpg.rf.ee474e177a999cc17624e847ff12d757.jpg`

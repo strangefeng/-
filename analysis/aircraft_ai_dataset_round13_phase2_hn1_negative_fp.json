@@ -1,0 +1,268 @@
+{
+  "title": "HN1 negative-image false positives",
+  "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round13_phase2\\R13_HN1_N2_HardNegative50\\weights\\best.pt",
+  "dataset_yaml": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\data.yaml",
+  "split": "train",
+  "imgsz": 800,
+  "conf": 0.001,
+  "high_conf": 0.25,
+  "iou": 0.7,
+  "device": "0",
+  "negative_image_count": 50,
+  "total_false_positive_boxes": 1560,
+  "high_conf_false_positive_boxes": 5,
+  "avg_false_positive_boxes_per_image": 31.2,
+  "avg_high_conf_false_positive_boxes_per_image": 0.1,
+  "per_image": [
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0001_valid_image-018-1-_jpg.rf.20342d2f49ba50237c9de46071938804.jpg",
+      "detections": 3,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0002_valid_image-018-1-_jpg.rf.20342d2f49ba50237c9de46071938804.jpg",
+      "detections": 1,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0003_valid_image-018-1-_jpg.rf.20342d2f49ba50237c9de46071938804.jpg",
+      "detections": 10,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0004_valid_image-019-1-_jpg.rf.2b89a20dd72f012d34c452b5f955fef1.jpg",
+      "detections": 19,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0005_valid_image-019-1-_jpg.rf.2b89a20dd72f012d34c452b5f955fef1.jpg",
+      "detections": 23,
+      "high_conf_detections": 1
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0006_valid_image-021_jpg.rf.45f0e9f0547d7f9e4c23fbf761c1adff.jpg",
+      "detections": 221,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0007_valid_image-024-3-_jpg.rf.a3121fbdfcc562f0b8c64b1118e99a3c.jpg",
+      "detections": 9,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0008_valid_image-032-2-_jpg.rf.34ee5121119b31710511d0658916594e.jpg",
+      "detections": 13,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0009_valid_image-033-1-1-_jpg.rf.f5c1bc130982674b0e15fc4afc2ad20f.jpg",
+      "detections": 5,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0010_valid_image-033-1-1-_jpg.rf.f5c1bc130982674b0e15fc4afc2ad20f.jpg",
+      "detections": 17,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0011_valid_image-033-1-1-_jpg.rf.f5c1bc130982674b0e15fc4afc2ad20f.jpg",
+      "detections": 7,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0012_valid_image-033-1-1-_jpg.rf.f5c1bc130982674b0e15fc4afc2ad20f.jpg",
+      "detections": 6,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0013_valid_image-040_jpg.rf.e0861999f1f73fefa55bf8c26742af73.jpg",
+      "detections": 39,
+      "high_conf_detections": 1
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0014_valid_image-042_jpg.rf.bb949772917bcbaecda2ecce8a006a2b.jpg",
+      "detections": 101,
+      "high_conf_detections": 2
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0015_valid_image-046_jpg.rf.372df374ebe3dfa6f708214bdecbac2e.jpg",
+      "detections": 40,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0016_valid_image-051_jpg.rf.6cd9335ec4c64fa749fc3a049678430b.jpg",
+      "detections": 9,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0017_valid_image-052_jpg.rf.069437417ea7ca4256d89972cbe0f539.jpg",
+      "detections": 21,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0018_valid_image-053_jpg.rf.8e297f3697acd55f3c8e77cf5318fb8e.jpg",
+      "detections": 63,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0019_valid_image-053_jpg.rf.8e297f3697acd55f3c8e77cf5318fb8e.jpg",
+      "detections": 14,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0020_valid_image-054-1-1-_jpg.rf.04ca62835380f88ffa5ba2468bbd9d45.jpg",
+      "detections": 104,
+      "high_conf_detections": 1
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0021_valid_image-054-1-1-_jpg.rf.04ca62835380f88ffa5ba2468bbd9d45.jpg",
+      "detections": 30,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0022_valid_image-054-1-1-_jpg.rf.04ca62835380f88ffa5ba2468bbd9d45.jpg",
+      "detections": 7,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0023_valid_image-085_jpg.rf.36fee844b1b36245457750cdb4dbbbf8.jpg",
+      "detections": 21,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0024_valid_image-085_jpg.rf.36fee844b1b36245457750cdb4dbbbf8.jpg",
+      "detections": 29,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0025_valid_image-091-1-_jpg.rf.b7a5f2ea6e546ff10fd88fe3ee3fa8c9.jpg",
+      "detections": 61,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0026_valid_sceneadd1000861_jpg.rf.00c5cfc825da9f4dba750117afd35509.jpg",
+      "detections": 61,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0027_valid_sceneadd1100481_jpg.rf.abacff390dc4a49c3fd262a610aca0cc.jpg",
+      "detections": 5,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0028_valid_sceneadd1300501_jpg.rf.b388992ea8cb115c336ab42d91ec0cff.jpg",
+      "detections": 4,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0029_valid_sceneadd1300701_jpg.rf.ed8c809bcfb380fa86ecf2734cb9eef1.jpg",
+      "detections": 16,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0030_valid_sceneadd1300701_jpg.rf.ed8c809bcfb380fa86ecf2734cb9eef1.jpg",
+      "detections": 2,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0031_valid_sceneadd1600301_jpg.rf.184b9205fcaddfffe3a0ec7b7ad86e4e.jpg",
+      "detections": 23,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0032_valid_sceneadd1700381_jpg.rf.ee55ff7590e802beb1e90cee953e4e80.jpg",
+      "detections": 15,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0033_valid_sceneadd1800361_jpg.rf.3334f683032f2b5af5be20b38e510e17.jpg",
+      "detections": 21,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0034_valid_sceneadd2104941_jpg.rf.5a229bc0dfaee0dcb0b4c76f5c3535ff.jpg",
+      "detections": 7,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0035_valid_sceneadd302321_jpg.rf.8eef3b15e4e27f7b4966b102624d31db.jpg",
+      "detections": 111,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0036_valid_sceneadd302641_jpg.rf.404e6bde954e5203cf458a1a5c311c8f.jpg",
+      "detections": 5,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0037_valid_sceneadd401561_jpg.rf.1babe2bffeba0221928cd85e92a9e22d.jpg",
+      "detections": 19,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0038_valid_sceneadd501361_jpg.rf.ea21c00f108efc577c6156d66560c459.jpg",
+      "detections": 70,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0039_valid_sceneadd501361_jpg.rf.ea21c00f108efc577c6156d66560c459.jpg",
+      "detections": 46,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0040_valid_sceneadd700581_jpg.rf.bb6082f10144231ac1e0b6f93ff9cf45.jpg",
+      "detections": 9,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0041_valid_sceneadd702041_jpg.rf.92d944a9ce973b9e6168c347a0b7613c.jpg",
+      "detections": 23,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0042_valid_sceneadd901361_jpg.rf.041fda50ce5e8c8ac4f02a39bdf77fd9.jpg",
+      "detections": 8,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0043_test_image-028-3-_jpg.rf.aa9e62d8416580ec958a3df3bf17bcf4.jpg",
+      "detections": 20,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0044_test_image-033-1-_jpg.rf.b59777e10a8b4dbe4804279e58dff47b.jpg",
+      "detections": 8,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0045_test_image-036_jpg.rf.3871ffa71d59060b267d0a75f81fe851.jpg",
+      "detections": 1,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0046_test_image-056-1-1-_jpg.rf.4cd025a8afbb5dd50a97c0fc3945b022.jpg",
+      "detections": 5,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0047_test_image-084-1-_jpg.rf.6d057a7291cf00f9cd41c8096965ad0d.jpg",
+      "detections": 48,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0048_test_image-084-1-_jpg.rf.6d057a7291cf00f9cd41c8096965ad0d.jpg",
+      "detections": 2,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0049_test_scene1400401_jpg.rf.260b9bb5327772f3bbe848838473498c.jpg",
+      "detections": 17,
+      "high_conf_detections": 0
+    },
+    {
+      "image": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\generated_3cls\\aircraft_ai_dataset_3cls_hardneg50\\train\\images\\fpneg_0050_test_scene1800701_jpg.rf.90c1c50d87349bd0a321a69d7204f2b3.jpg",
+      "detections": 141,
+      "high_conf_detections": 0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "R15 TTA C4 official val",
+  "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round15_github_uav\\R15_C4_N2FinetuneLowLR\\weights\\best.pt",
+  "dataset_yaml": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\supplementary_3cls\\aircraft_ai_dataset_3cls\\data.yaml",
+  "split": "val",
+  "imgsz": 800,
+  "device": "0",
+  "workers": 0,
+  "augment": true,
+  "precision": 0.7737538496760941,
+  "recall": 0.6982793980947365,
+  "map50": 0.7399703204304066,
+  "map50_95": 0.35474310028805806,
+  "class_metrics": {
+    "missing-rivet": {
+      "ap50": 0.6626408623036508,
+      "ap50_95": 0.32240220402211006
+    },
+    "rust": {
+      "ap50": 0.8055045634521046,
+      "ap50_95": 0.4026859022425809
+    },
+    "scratch": {
+      "ap50": 0.7517655355354642,
+      "ap50_95": 0.3391411945994828
+    }
+  },
+  "save_dir": "D:\\桌面\\毕设\\数据集\\runs\\detect\\val2"
+}

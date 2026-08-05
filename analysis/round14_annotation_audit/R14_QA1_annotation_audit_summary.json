@@ -1,0 +1,37 @@
+{
+  "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round4\\N2_yolo11n_i800_no_mosaic\\weights\\best.pt",
+  "dataset_yaml": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\supplementary_3cls\\aircraft_ai_dataset_3cls\\data.yaml",
+  "splits": [
+    "train",
+    "valid"
+  ],
+  "candidate_count": 420,
+  "error_type_counts": {
+    "missing_label": 186,
+    "wrong_class": 22,
+    "shifted_box": 24,
+    "oversized_box": 188
+  },
+  "split_counts": {
+    "valid": 124,
+    "train": 296
+  },
+  "class_gt_counts": {
+    "rust": 127,
+    "missing-rivet": 33,
+    "scratch": 74
+  },
+  "class_pred_counts": {
+    "scratch": 100,
+    "rust": 101,
+    "missing-rivet": 77
+  },
+  "missing_rivet_issue_count": 87,
+  "rust_issue_count": 202,
+  "scratch_issue_count": 153,
+  "train_fix_recommended_count": 296,
+  "valid_record_only_count": 124,
+  "clean_train_recommended": true,
+  "output_csv": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\analysis\\round14_annotation_audit\\annotation_audit_candidates.csv",
+  "vis_dir": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\analysis\\round14_annotation_audit\\vis"
+}

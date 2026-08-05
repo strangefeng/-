@@ -1,0 +1,875 @@
+{
+  "case_source": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\analysis\\scratch_m1_audit\\summary.json",
+  "dataset_root": "D:\\桌面\\毕设\\数据集\\aircraft-skin-defects-new-dataset.v1i.yolov5pytorch",
+  "case_count": 9,
+  "image_count": 6,
+  "note": "The hard-case set contains 6 images in total: 4 from valid and 2 from test. This corrects the common shorthand that calls all 6 images validation cases.",
+  "experiments": {
+    "Exp_A": {
+      "title": "Baseline YOLO11n plus offline Copy-Paste",
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_new_stage2_formal\\Exp_A_baseline_cp\\weights\\best.pt",
+      "mean_iou": 0.5836688290111698,
+      "mean_conf": 0.4335184845323157,
+      "matched": 5.0,
+      "total": 9.0,
+      "match_rate": 0.5555555555555556
+    },
+    "Exp_B": {
+      "title": "YOLO11n with Neck-WT refinement on original dataset",
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_new_stage2_formal\\Exp_B_neck_wt\\weights\\best.pt",
+      "mean_iou": 0.5007325517560326,
+      "mean_conf": 0.09679794169238044,
+      "matched": 1.0,
+      "total": 9.0,
+      "match_rate": 0.1111111111111111
+    },
+    "Exp_C": {
+      "title": "YOLO11n with Neck-WT refinement plus offline Copy-Paste",
+      "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_new_stage2_formal\\Exp_C_neck_wt_cp\\weights\\best.pt",
+      "mean_iou": 0.4709001307406752,
+      "mean_conf": 0.10799187269165283,
+      "matched": 1.0,
+      "total": 9.0,
+      "match_rate": 0.1111111111111111
+    }
+  },
+  "records": [
+    {
+      "experiment_id": "Exp_A",
+      "title": "Baseline YOLO11n plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230511_102045_jpg.rf.1e5f3a9efb277acbb0abcb8ff5af8c6d.jpg",
+      "case_id": "C1",
+      "gt_box": [
+        457.4,
+        948.9,
+        1870.5,
+        1228.8
+      ],
+      "best_scratch_iou": 0.8764685494576806,
+      "best_scratch_conf": 0.8284338116645813,
+      "best_scratch_box": [
+        404.2216796875,
+        937.3464965820312,
+        1862.0166015625,
+        1243.41796875
+      ],
+      "best_other_iou": 0.05584504780935274,
+      "best_other_cls": "paint-off",
+      "best_other_conf": 0.0029774873983114958,
+      "best_other_box": [
+        437.4673767089844,
+        462.1068420410156,
+        940.4679565429688,
+        1023.1025390625
+      ],
+      "status": "matched"
+    },
+    {
+      "experiment_id": "Exp_B",
+      "title": "YOLO11n with Neck-WT refinement on original dataset",
+      "split": "valid",
+      "image": "IMG_20230511_102045_jpg.rf.1e5f3a9efb277acbb0abcb8ff5af8c6d.jpg",
+      "case_id": "C1",
+      "gt_box": [
+        457.4,
+        948.9,
+        1870.5,
+        1228.8
+      ],
+      "best_scratch_iou": 0.5879001153253774,
+      "best_scratch_conf": 0.15136578679084778,
+      "best_scratch_box": [
+        618.275390625,
+        857.3742065429688,
+        1779.026611328125,
+        1272.6248779296875
+      ],
+      "best_other_iou": 0.5466566747223742,
+      "best_other_cls": "crack",
+      "best_other_conf": 0.0010892385616898537,
+      "best_other_box": [
+        713.9140625,
+        812.2280883789062,
+        1812.7137451171875,
+        1244.1871337890625
+      ],
+      "status": "low_confidence"
+    },
+    {
+      "experiment_id": "Exp_C",
+      "title": "YOLO11n with Neck-WT refinement plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230511_102045_jpg.rf.1e5f3a9efb277acbb0abcb8ff5af8c6d.jpg",
+      "case_id": "C1",
+      "gt_box": [
+        457.4,
+        948.9,
+        1870.5,
+        1228.8
+      ],
+      "best_scratch_iou": 0.9023872031965579,
+      "best_scratch_conf": 0.11585156619548798,
+      "best_scratch_box": [
+        452.8102111816406,
+        941.0806884765625,
+        1934.1605224609375,
+        1220.7220458984375
+      ],
+      "best_other_iou": 0.36893061183042064,
+      "best_other_cls": "paint-off",
+      "best_other_conf": 0.0014369265409186482,
+      "best_other_box": [
+        906.8656616210938,
+        810.3251342773438,
+        2048.0,
+        1340.7481689453125
+      ],
+      "status": "low_confidence"
+    },
+    {
+      "experiment_id": "Exp_A",
+      "title": "Baseline YOLO11n plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230513_101356_jpg.rf.e5c01cb4ac251365b2cc37f56bb6e087.jpg",
+      "case_id": "C2",
+      "gt_box": [
+        419.8,
+        402.8,
+        706.6,
+        928.4
+      ],
+      "best_scratch_iou": 0.8912656380470697,
+      "best_scratch_conf": 0.6025120615959167,
+      "best_scratch_box": [
+        418.60498046875,
+        412.8534240722656,
+        720.3646850585938,
+        953.0653686523438
+      ],
+      "best_other_iou": 0.8137818241746896,
+      "best_other_cls": "paint-off",
+      "best_other_conf": 0.010991326533257961,
+      "best_other_box": [
+        410.94952392578125,
+        406.62530517578125,
+        740.1980590820312,
+        961.8023681640625
+      ],
+      "status": "matched"
+    },
+    {
+      "experiment_id": "Exp_A",
+      "title": "Baseline YOLO11n plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230513_101356_jpg.rf.e5c01cb4ac251365b2cc37f56bb6e087.jpg",
+      "case_id": "C3",
+      "gt_box": [
+        812.4,
+        447.1,
+        1105.9,
+        1010.3
+      ],
+      "best_scratch_iou": 0.7077001085087828,
+      "best_scratch_conf": 0.7440540194511414,
+      "best_scratch_box": [
+        804.8757934570312,
+        418.234375,
+        1192.1990966796875,
+        1021.2767944335938
+      ],
+      "best_other_iou": 0.7212393020270143,
+      "best_other_cls": "paint-off",
+      "best_other_conf": 0.0011087545426562428,
+      "best_other_box": [
+        812.5042724609375,
+        434.67431640625,
+        1206.6507568359375,
+        1015.7973022460938
+      ],
+      "status": "matched"
+    },
+    {
+      "experiment_id": "Exp_A",
+      "title": "Baseline YOLO11n plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230513_101356_jpg.rf.e5c01cb4ac251365b2cc37f56bb6e087.jpg",
+      "case_id": "C4",
+      "gt_box": [
+        425.5,
+        1071.8,
+        621.2,
+        1465.5
+      ],
+      "best_scratch_iou": 0.7472945666662473,
+      "best_scratch_conf": 0.0021995343267917633,
+      "best_scratch_box": [
+        391.440673828125,
+        1080.7320556640625,
+        638.0708618164062,
+        1482.2005615234375
+      ],
+      "best_other_iou": 0.0,
+      "best_other_cls": "missing-head",
+      "best_other_conf": 0.03768715634942055,
+      "best_other_box": [
+        0.3016113340854645,
+        1435.6082763671875,
+        110.60615539550781,
+        1841.755126953125
+      ],
+      "status": "low_confidence"
+    },
+    {
+      "experiment_id": "Exp_A",
+      "title": "Baseline YOLO11n plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230513_101356_jpg.rf.e5c01cb4ac251365b2cc37f56bb6e087.jpg",
+      "case_id": "C5",
+      "gt_box": [
+        814.7,
+        1028.5,
+        962.6,
+        1242.4
+      ],
+      "best_scratch_iou": 0.0216853606471851,
+      "best_scratch_conf": 0.0014640354784205556,
+      "best_scratch_box": [
+        376.8099670410156,
+        422.9064636230469,
+        870.8490600585938,
+        1504.232666015625
+      ],
+      "best_other_iou": 0.0,
+      "best_other_cls": "missing-head",
+      "best_other_conf": 0.03768715634942055,
+      "best_other_box": [
+        0.3016113340854645,
+        1435.6082763671875,
+        110.60615539550781,
+        1841.755126953125
+      ],
+      "status": "missed"
+    },
+    {
+      "experiment_id": "Exp_B",
+      "title": "YOLO11n with Neck-WT refinement on original dataset",
+      "split": "valid",
+      "image": "IMG_20230513_101356_jpg.rf.e5c01cb4ac251365b2cc37f56bb6e087.jpg",
+      "case_id": "C2",
+      "gt_box": [
+        419.8,
+        402.8,
+        706.6,
+        928.4
+      ],
+      "best_scratch_iou": 0.7051212582807346,
+      "best_scratch_conf": 0.1115991473197937,
+      "best_scratch_box": [
+        348.50750732421875,
+        409.6368103027344,
+        715.5382080078125,
+        979.1809692382812
+      ],
+      "best_other_iou": 0.6916608586588544,
+      "best_other_cls": "dent",
+      "best_other_conf": 0.002044523833319545,
+      "best_other_box": [
+        384.32720947265625,
+        383.5251159667969,
+        745.1152954101562,
+        865.7056884765625
+      ],
+      "status": "low_confidence"
+    },
+    {
+      "experiment_id": "Exp_B",
+      "title": "YOLO11n with Neck-WT refinement on original dataset",
+      "split": "valid",
+      "image": "IMG_20230513_101356_jpg.rf.e5c01cb4ac251365b2cc37f56bb6e087.jpg",
+      "case_id": "C3",
+      "gt_box": [
+        812.4,
+        447.1,
+        1105.9,
+        1010.3
+      ],
+      "best_scratch_iou": 0.4743663924174929,
+      "best_scratch_conf": 0.029253149405121803,
+      "best_scratch_box": [
+        749.7075805664062,
+        413.689453125,
+        1240.7635498046875,
+        1123.3094482421875
+      ],
+      "best_other_iou": 0.67077713866517,
+      "best_other_cls": "dent",
+      "best_other_conf": 0.001480759703554213,
+      "best_other_box": [
+        776.8507690429688,
+        463.9465026855469,
+        1158.404296875,
+        936.9074096679688
+      ],
+      "status": "box_drift"
+    },
+    {
+      "experiment_id": "Exp_B",
+      "title": "YOLO11n with Neck-WT refinement on original dataset",
+      "split": "valid",
+      "image": "IMG_20230513_101356_jpg.rf.e5c01cb4ac251365b2cc37f56bb6e087.jpg",
+      "case_id": "C4",
+      "gt_box": [
+        425.5,
+        1071.8,
+        621.2,
+        1465.5
+      ],
+      "best_scratch_iou": 0.23988500937346252,
+      "best_scratch_conf": 0.0014362212968990207,
+      "best_scratch_box": [
+        450.0223693847656,
+        1049.3394775390625,
+        1063.2113037109375,
+        1406.2235107421875
+      ],
+      "best_other_iou": 0.05064176663264415,
+      "best_other_cls": "crack",
+      "best_other_conf": 0.0036661424674093723,
+      "best_other_box": [
+        436.467041015625,
+        174.4600067138672,
+        1431.2596435546875,
+        1613.791259765625
+      ],
+      "status": "missed"
+    },
+    {
+      "experiment_id": "Exp_B",
+      "title": "YOLO11n with Neck-WT refinement on original dataset",
+      "split": "valid",
+      "image": "IMG_20230513_101356_jpg.rf.e5c01cb4ac251365b2cc37f56bb6e087.jpg",
+      "case_id": "C5",
+      "gt_box": [
+        814.7,
+        1028.5,
+        962.6,
+        1242.4
+      ],
+      "best_scratch_iou": 0.12866670768413677,
+      "best_scratch_conf": 0.0014362212968990207,
+      "best_scratch_box": [
+        450.0223693847656,
+        1049.3394775390625,
+        1063.2113037109375,
+        1406.2235107421875
+      ],
+      "best_other_iou": 0.20163050822479292,
+      "best_other_cls": "paint-off",
+      "best_other_conf": 0.001282246084883809,
+      "best_other_box": [
+        783.5971069335938,
+        1048.888916015625,
+        1165.5498046875,
+        1412.6217041015625
+      ],
+      "status": "missed"
+    },
+    {
+      "experiment_id": "Exp_C",
+      "title": "YOLO11n with Neck-WT refinement plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230513_101356_jpg.rf.e5c01cb4ac251365b2cc37f56bb6e087.jpg",
+      "case_id": "C2",
+      "gt_box": [
+        419.8,
+        402.8,
+        706.6,
+        928.4
+      ],
+      "best_scratch_iou": 0.7042692313209751,
+      "best_scratch_conf": 0.3845815360546112,
+      "best_scratch_box": [
+        366.42803955078125,
+        376.6776428222656,
+        682.3742065429688,
+        956.6102905273438
+      ],
+      "best_other_iou": 0.3340286607629024,
+      "best_other_cls": "dent",
+      "best_other_conf": 0.0027302331291139126,
+      "best_other_box": [
+        86.7896499633789,
+        391.13751220703125,
+        645.6005249023438,
+        969.5797119140625
+      ],
+      "status": "matched"
+    },
+    {
+      "experiment_id": "Exp_C",
+      "title": "YOLO11n with Neck-WT refinement plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230513_101356_jpg.rf.e5c01cb4ac251365b2cc37f56bb6e087.jpg",
+      "case_id": "C3",
+      "gt_box": [
+        812.4,
+        447.1,
+        1105.9,
+        1010.3
+      ],
+      "best_scratch_iou": 0.8454851020018459,
+      "best_scratch_conf": 0.20900024473667145,
+      "best_scratch_box": [
+        805.5003051757812,
+        405.5289001464844,
+        1085.62548828125,
+        1014.4856567382812
+      ],
+      "best_other_iou": 0.0,
+      "best_other_cls": "dent",
+      "best_other_conf": 0.5968657732009888,
+      "best_other_box": [
+        1135.5162353515625,
+        986.1471557617188,
+        1696.021484375,
+        1519.28271484375
+      ],
+      "status": "low_confidence"
+    },
+    {
+      "experiment_id": "Exp_C",
+      "title": "YOLO11n with Neck-WT refinement plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230513_101356_jpg.rf.e5c01cb4ac251365b2cc37f56bb6e087.jpg",
+      "case_id": "C4",
+      "gt_box": [
+        425.5,
+        1071.8,
+        621.2,
+        1465.5
+      ],
+      "best_scratch_iou": 0.06044059578762822,
+      "best_scratch_conf": 0.005089343525469303,
+      "best_scratch_box": [
+        565.9290161132812,
+        943.1384887695312,
+        1058.1278076171875,
+        1365.7525634765625
+      ],
+      "best_other_iou": 0.01192648737890178,
+      "best_other_cls": "dent",
+      "best_other_conf": 0.002843140857294202,
+      "best_other_box": [
+        0.0,
+        1407.7025146484375,
+        506.4049987792969,
+        2039.0279541015625
+      ],
+      "status": "missed"
+    },
+    {
+      "experiment_id": "Exp_C",
+      "title": "YOLO11n with Neck-WT refinement plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230513_101356_jpg.rf.e5c01cb4ac251365b2cc37f56bb6e087.jpg",
+      "case_id": "C5",
+      "gt_box": [
+        814.7,
+        1028.5,
+        962.6,
+        1242.4
+      ],
+      "best_scratch_iou": 0.15208782841110158,
+      "best_scratch_conf": 0.005089343525469303,
+      "best_scratch_box": [
+        565.9290161132812,
+        943.1384887695312,
+        1058.1278076171875,
+        1365.7525634765625
+      ],
+      "best_other_iou": 0.0,
+      "best_other_cls": "dent",
+      "best_other_conf": 0.5968657732009888,
+      "best_other_box": [
+        1135.5162353515625,
+        986.1471557617188,
+        1696.021484375,
+        1519.28271484375
+      ],
+      "status": "missed"
+    },
+    {
+      "experiment_id": "Exp_A",
+      "title": "Baseline YOLO11n plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230513_102958_jpg.rf.19179ca0018aafc85ca2b65caab645d9.jpg",
+      "case_id": "C6",
+      "gt_box": [
+        512.0,
+        1003.5,
+        1583.8,
+        1679.4
+      ],
+      "best_scratch_iou": 0.6061339758191236,
+      "best_scratch_conf": 0.8698870539665222,
+      "best_scratch_box": [
+        346.8150329589844,
+        1017.5050659179688,
+        1605.9696044921875,
+        1475.743408203125
+      ],
+      "best_other_iou": 0.0,
+      "best_other_cls": "dent",
+      "best_other_conf": 0.3817823529243469,
+      "best_other_box": [
+        1596.260986328125,
+        899.1691284179688,
+        1972.05078125,
+        1257.835205078125
+      ],
+      "status": "matched"
+    },
+    {
+      "experiment_id": "Exp_B",
+      "title": "YOLO11n with Neck-WT refinement on original dataset",
+      "split": "valid",
+      "image": "IMG_20230513_102958_jpg.rf.19179ca0018aafc85ca2b65caab645d9.jpg",
+      "case_id": "C6",
+      "gt_box": [
+        512.0,
+        1003.5,
+        1583.8,
+        1679.4
+      ],
+      "best_scratch_iou": 0.826231259859711,
+      "best_scratch_conf": 0.24948732554912567,
+      "best_scratch_box": [
+        449.357421875,
+        993.091796875,
+        1578.4803466796875,
+        1602.930908203125
+      ],
+      "best_other_iou": 0.8635381075123275,
+      "best_other_cls": "dent",
+      "best_other_conf": 0.04017793387174606,
+      "best_other_box": [
+        506.67901611328125,
+        1009.9088134765625,
+        1629.49951171875,
+        1743.8509521484375
+      ],
+      "status": "low_confidence"
+    },
+    {
+      "experiment_id": "Exp_C",
+      "title": "YOLO11n with Neck-WT refinement plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230513_102958_jpg.rf.19179ca0018aafc85ca2b65caab645d9.jpg",
+      "case_id": "C6",
+      "gt_box": [
+        512.0,
+        1003.5,
+        1583.8,
+        1679.4
+      ],
+      "best_scratch_iou": 0.7251169725634325,
+      "best_scratch_conf": 0.22985626757144928,
+      "best_scratch_box": [
+        449.1447448730469,
+        1013.6027221679688,
+        1685.9617919921875,
+        1565.3013916015625
+      ],
+      "best_other_iou": 0.7127813794063718,
+      "best_other_cls": "dent",
+      "best_other_conf": 0.0031678953673690557,
+      "best_other_box": [
+        468.7691345214844,
+        997.8406372070312,
+        1641.324462890625,
+        1524.5985107421875
+      ],
+      "status": "low_confidence"
+    },
+    {
+      "experiment_id": "Exp_A",
+      "title": "Baseline YOLO11n plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230513_103539_jpg.rf.645353e331bce4e1dc0fce08a8c364aa.jpg",
+      "case_id": "C7",
+      "gt_box": [
+        129.7,
+        1460.9,
+        518.8,
+        1815.9
+      ],
+      "best_scratch_iou": 0.0,
+      "best_scratch_conf": 0.07163440436124802,
+      "best_scratch_box": [
+        0.5252441763877869,
+        1845.615234375,
+        663.3932495117188,
+        2048.0
+      ],
+      "best_other_iou": 0.2516783726977629,
+      "best_other_cls": "paint-off",
+      "best_other_conf": 0.00888774637132883,
+      "best_other_box": [
+        0.0,
+        1154.2568359375,
+        365.5584411621094,
+        1770.8001708984375
+      ],
+      "status": "missed"
+    },
+    {
+      "experiment_id": "Exp_B",
+      "title": "YOLO11n with Neck-WT refinement on original dataset",
+      "split": "valid",
+      "image": "IMG_20230513_103539_jpg.rf.645353e331bce4e1dc0fce08a8c364aa.jpg",
+      "case_id": "C7",
+      "gt_box": [
+        129.7,
+        1460.9,
+        518.8,
+        1815.9
+      ],
+      "best_scratch_iou": 0.4388265401029253,
+      "best_scratch_conf": 0.0010376558639109135,
+      "best_scratch_box": [
+        51.85488510131836,
+        1565.9176025390625,
+        502.29669189453125,
+        1937.255126953125
+      ],
+      "best_other_iou": 0.3325934718287248,
+      "best_other_cls": "crack",
+      "best_other_conf": 0.007798041217029095,
+      "best_other_box": [
+        0.0,
+        1115.781494140625,
+        461.6563415527344,
+        1839.3369140625
+      ],
+      "status": "box_drift"
+    },
+    {
+      "experiment_id": "Exp_C",
+      "title": "YOLO11n with Neck-WT refinement plus offline Copy-Paste",
+      "split": "valid",
+      "image": "IMG_20230513_103539_jpg.rf.645353e331bce4e1dc0fce08a8c364aa.jpg",
+      "case_id": "C7",
+      "gt_box": [
+        129.7,
+        1460.9,
+        518.8,
+        1815.9
+      ],
+      "best_scratch_iou": 0.03441082399754071,
+      "best_scratch_conf": 0.0031253211200237274,
+      "best_scratch_box": [
+        0.0,
+        1782.2020263671875,
+        963.2243041992188,
+        2047.9976806640625
+      ],
+      "best_other_iou": 0.21587168508599663,
+      "best_other_cls": "crack",
+      "best_other_conf": 0.0010715158423408866,
+      "best_other_box": [
+        3.5712890625,
+        864.0943603515625,
+        566.0712890625,
+        1751.7633056640625
+      ],
+      "status": "missed"
+    },
+    {
+      "experiment_id": "Exp_A",
+      "title": "Baseline YOLO11n plus offline Copy-Paste",
+      "split": "test",
+      "image": "IMG_20230513_101310_jpg.rf.671896b24500b5f9d458007a4a6b710b.jpg",
+      "case_id": "C8",
+      "gt_box": [
+        484.7,
+        385.7,
+        1396.1,
+        805.5
+      ],
+      "best_scratch_iou": 0.8559794169849176,
+      "best_scratch_conf": 0.7777280807495117,
+      "best_scratch_box": [
+        490.53912353515625,
+        332.7286376953125,
+        1388.3804931640625,
+        795.80908203125
+      ],
+      "best_other_iou": 0.09329444894465122,
+      "best_other_cls": "paint-off",
+      "best_other_conf": 0.012208201922476292,
+      "best_other_box": [
+        1009.3826293945312,
+        668.4268798828125,
+        1435.2896728515625,
+        1228.61572265625
+      ],
+      "status": "matched"
+    },
+    {
+      "experiment_id": "Exp_B",
+      "title": "YOLO11n with Neck-WT refinement on original dataset",
+      "split": "test",
+      "image": "IMG_20230513_101310_jpg.rf.671896b24500b5f9d458007a4a6b710b.jpg",
+      "case_id": "C8",
+      "gt_box": [
+        484.7,
+        385.7,
+        1396.1,
+        805.5
+      ],
+      "best_scratch_iou": 0.6380004382882001,
+      "best_scratch_conf": 0.3169008195400238,
+      "best_scratch_box": [
+        433.6087951660156,
+        317.4502868652344,
+        1306.26171875,
+        893.7022705078125
+      ],
+      "best_other_iou": 0.6718836601320134,
+      "best_other_cls": "paint-off",
+      "best_other_conf": 0.005317302420735359,
+      "best_other_box": [
+        618.7842407226562,
+        340.07928466796875,
+        1524.4205322265625,
+        797.8345947265625
+      ],
+      "status": "matched"
+    },
+    {
+      "experiment_id": "Exp_C",
+      "title": "YOLO11n with Neck-WT refinement plus offline Copy-Paste",
+      "split": "test",
+      "image": "IMG_20230513_101310_jpg.rf.671896b24500b5f9d458007a4a6b710b.jpg",
+      "case_id": "C8",
+      "gt_box": [
+        484.7,
+        385.7,
+        1396.1,
+        805.5
+      ],
+      "best_scratch_iou": 0.7375952038188417,
+      "best_scratch_conf": 0.017732303589582443,
+      "best_scratch_box": [
+        506.7265625,
+        430.5099792480469,
+        1570.8719482421875,
+        801.6106567382812
+      ],
+      "best_other_iou": 0.7616014641323477,
+      "best_other_cls": "paint-off",
+      "best_other_conf": 0.001380880014039576,
+      "best_other_box": [
+        531.2953491210938,
+        356.4817810058594,
+        1543.201171875,
+        808.2289428710938
+      ],
+      "status": "low_confidence"
+    },
+    {
+      "experiment_id": "Exp_A",
+      "title": "Baseline YOLO11n plus offline Copy-Paste",
+      "split": "test",
+      "image": "IMG_20230513_103533_jpg.rf.0c2e527c16bd06bfac576047833c4047.jpg",
+      "case_id": "C9",
+      "gt_box": [
+        1652.1,
+        942.1,
+        2048.0,
+        1385.8
+      ],
+      "best_scratch_iou": 0.5464918449695204,
+      "best_scratch_conf": 0.0037533591967076063,
+      "best_scratch_box": [
+        1541.9754638671875,
+        973.5029296875,
+        1984.897705078125,
+        1325.636962890625
+      ],
+      "best_other_iou": 0.09555549807712593,
+      "best_other_cls": "dent",
+      "best_other_conf": 0.002573610981926322,
+      "best_other_box": [
+        1985.876953125,
+        1105.1324462890625,
+        2048.0,
+        1495.3929443359375
+      ],
+      "status": "low_confidence"
+    },
+    {
+      "experiment_id": "Exp_B",
+      "title": "YOLO11n with Neck-WT refinement on original dataset",
+      "split": "test",
+      "image": "IMG_20230513_103533_jpg.rf.0c2e527c16bd06bfac576047833c4047.jpg",
+      "case_id": "C9",
+      "gt_box": [
+        1652.1,
+        942.1,
+        2048.0,
+        1385.8
+      ],
+      "best_scratch_iou": 0.46759524447225276,
+      "best_scratch_conf": 0.008665148168802261,
+      "best_scratch_box": [
+        1419.9501953125,
+        914.9890747070312,
+        2036.187744140625,
+        1497.9117431640625
+      ],
+      "best_other_iou": 0.8354154232122585,
+      "best_other_cls": "dent",
+      "best_other_conf": 0.0010482080979272723,
+      "best_other_box": [
+        1643.4261474609375,
+        934.6461181640625,
+        2043.928955078125,
+        1449.7464599609375
+      ],
+      "status": "box_drift"
+    },
+    {
+      "experiment_id": "Exp_C",
+      "title": "YOLO11n with Neck-WT refinement plus offline Copy-Paste",
+      "split": "test",
+      "image": "IMG_20230513_103533_jpg.rf.0c2e527c16bd06bfac576047833c4047.jpg",
+      "case_id": "C9",
+      "gt_box": [
+        1652.1,
+        942.1,
+        2048.0,
+        1385.8
+      ],
+      "best_scratch_iou": 0.07630821556815393,
+      "best_scratch_conf": 0.0016009279061108828,
+      "best_scratch_box": [
+        1440.2886962890625,
+        342.6906433105469,
+        2032.6864013671875,
+        1053.2359619140625
+      ],
+      "best_other_iou": 0.8926266534890624,
+      "best_other_cls": "dent",
+      "best_other_conf": 0.0027326608542352915,
+      "best_other_box": [
+        1618.0772705078125,
+        942.2296752929688,
+        2040.8125,
+        1379.798095703125
+      ],
+      "status": "missed"
+    }
+  ]
+}

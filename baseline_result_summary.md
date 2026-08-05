@@ -1,0 +1,9 @@
+﻿# YOLO11 Baseline Result Summary
+
+## 三数据集结果汇总表
+
+| dataset_id | name | output_dir | results.csv | best.pt | last.pt | precision | recall | mAP50 | mAP50-95 | training_completed | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| aircraft_skin_defects | bl_aircraft_skin_y11n_e100_i640_b16_cpu | D:\runs\detect\yolo-baseline-repro\runs\baseline_5cls\bl_aircraft_skin_y11n_e100_i640_b16_cpu | D:\runs\detect\yolo-baseline-repro\runs\baseline_5cls\bl_aircraft_skin_y11n_e100_i640_b16_cpu\results.csv | D:\runs\detect\yolo-baseline-repro\runs\baseline_5cls\bl_aircraft_skin_y11n_e100_i640_b16_cpu\weights\best.pt | D:\runs\detect\yolo-baseline-repro\runs\baseline_5cls\bl_aircraft_skin_y11n_e100_i640_b16_cpu\weights\last.pt |  |  |  |  |  |  |
+| aircraft_skin_defects_new | bl_aircraft_skin_new_y11n_e100_i640_b16_cpu | D:\runs\detect\yolo-baseline-repro\runs\baseline_5cls\bl_aircraft_skin_new_y11n_e100_i640_b16_cpu | D:\runs\detect\yolo-baseline-repro\runs\baseline_5cls\bl_aircraft_skin_new_y11n_e100_i640_b16_cpu\results.csv | D:\runs\detect\yolo-baseline-repro\runs\baseline_5cls\bl_aircraft_skin_new_y11n_e100_i640_b16_cpu\weights\best.pt | D:\runs\detect\yolo-baseline-repro\runs\baseline_5cls\bl_aircraft_skin_new_y11n_e100_i640_b16_cpu\weights\last.pt |  |  |  |  |  |  |
+| aircraft_surface_defect_detection | bl_aircraft_surface_y11n_e100_i640_b16_cpu | D:\runs\detect\yolo-baseline-repro\runs\baseline_5cls\bl_aircraft_surface_y11n_e100_i640_b16_cpu | D:\runs\detect\yolo-baseline-repro\runs\baseline_5cls\bl_aircraft_surface_y11n_e100_i640_b16_cpu\results.csv | D:\runs\detect\yolo-baseline-repro\runs\baseline_5cls\bl_aircraft_surface_y11n_e100_i640_b16_cpu\weights\best.pt | D:\runs\detect\yolo-baseline-repro\runs\baseline_5cls\bl_aircraft_surface_y11n_e100_i640_b16_cpu\weights\last.pt |  |  |  |  |  |  |

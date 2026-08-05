@@ -1,0 +1,104 @@
+{
+  "suite_id": "aircraft_ai_dataset_round16_aerodefect",
+  "description": "Round16 SCI-oriented AeroDefect-YOLO matrix: detail-preserving SPD stem, ordinary P2 control, defect-aware P2 branch, and dynamic multi-scale fusion.",
+  "results_csv": "results/aircraft_ai_dataset_round16_aerodefect.csv",
+  "target_class_names": [
+    "missing-rivet",
+    "rust",
+    "scratch"
+  ],
+  "dataset_yaml": "datasets/supplementary_3cls/aircraft_ai_dataset_3cls/data.yaml",
+  "project": "runs/aircraft_ai_round16_aerodefect",
+  "train_defaults": {
+    "imgsz": 800,
+    "epochs": 100,
+    "batch": 8,
+    "device": "auto",
+    "workers": 0,
+    "seed": 42,
+    "deterministic": true,
+    "optimizer": "auto",
+    "amp": true,
+    "plots": true,
+    "val": true,
+    "save": true,
+    "exist_ok": false,
+    "rect": false,
+    "cache": false,
+    "pretrained": true,
+    "mosaic": 0.0,
+    "erasing": 0.0,
+    "mixup": 0.0,
+    "copy_paste": 0.0,
+    "auto_augment": "none",
+    "flipud": 0.0,
+    "close_mosaic": 0,
+    "patience": 30
+  },
+  "metadata_defaults": {
+    "experiment_group": "aircraft_ai_dataset_round16_aerodefect",
+    "dataset_role": "public_3cls",
+    "backbone_variant": "yolo11n",
+    "feature_variant": "default",
+    "neck_variant": "default",
+    "loss_variant": "default",
+    "assigner_variant": "default",
+    "notes": "Round16 keeps the N2 detail-preserving augmentation recipe fixed and tests only SCI-oriented architecture changes."
+  },
+  "experiments": [
+    {
+      "experiment_id": "A1",
+      "name": "A1_yolo11n_i800_spd_stem",
+      "title": "SPD detail-preserving stem under the N2 recipe",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_spd.yaml",
+      "pretrained": "../yolo11n.pt",
+      "metadata": {
+        "augment_profile": "n2_spd_stem",
+        "feature_variant": "spd_stem",
+        "notes": "Tests whether early space-to-depth downsampling preserves micro-defect pixels better than standard stride-2 convolution."
+      }
+    },
+    {
+      "experiment_id": "A2",
+      "name": "A2_yolo11n_i800_plain_p2_control",
+      "title": "Plain P2 small-object head control under the N2 recipe",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_p2.yaml",
+      "pretrained": "../yolo11n.pt",
+      "metadata": {
+        "augment_profile": "n2_plain_p2",
+        "feature_variant": "p2_head",
+        "notes": "Control experiment: confirms whether a generic P2 branch alone is sufficient for aircraft skin micro-defects."
+      }
+    },
+    {
+      "experiment_id": "A3",
+      "name": "A3_yolo11n_i800_spd_defect_p2",
+      "title": "SPD stem plus defect-aware morphology P2 branch",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_spd_defect_p2.yaml",
+      "pretrained": "../yolo11n.pt",
+      "metadata": {
+        "augment_profile": "n2_spd_defect_p2",
+        "feature_variant": "spd_defect_p2",
+        "neck_variant": "p2_morphology_gate",
+        "notes": "Main tiny-defect branch: combines detail-preserving downsampling with a P2 morphology gate for round missing rivets, thin scratches, and diffuse rust."
+      }
+    },
+    {
+      "experiment_id": "A4",
+      "name": "A4_yolo11n_i800_spd_defect_p2_dyfuse",
+      "title": "Full AeroDefect-YOLO with dynamic multi-scale fusion",
+      "ready": true,
+      "model": "custom_yolo/models/yolo11n_spd_defect_p2_dyfuse.yaml",
+      "pretrained": "../yolo11n.pt",
+      "metadata": {
+        "augment_profile": "n2_spd_defect_p2_dyfuse",
+        "feature_variant": "spd_defect_p2",
+        "neck_variant": "dynamic_fusion",
+        "notes": "Full SCI candidate: detail-preserving stem, defect-aware high-resolution P2 branch, and learnable multi-scale neck fusion."
+      }
+    }
+  ]
+}

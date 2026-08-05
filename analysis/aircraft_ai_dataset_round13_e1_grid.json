@@ -1,0 +1,291 @@
+{
+  "title": "R13-E1 SAHI threshold search",
+  "dataset_role": "round13_sahi_grid_search",
+  "weights_path": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\runs\\aircraft_ai_round4\\N2_yolo11n_i800_no_mosaic\\weights\\best.pt",
+  "dataset_yaml": "D:\\桌面\\毕设\\数据集\\yolo-baseline-repro\\datasets\\supplementary_3cls\\aircraft_ai_dataset_3cls\\data.yaml",
+  "split": "valid",
+  "slice_size": 512,
+  "overlap": 0.2,
+  "imgsz": 800,
+  "tile_iou": 0.7,
+  "base_merge_iou": 0.5,
+  "priority_conf": 0.2,
+  "priority_merge_ious": [
+    0.45,
+    0.5,
+    0.55
+  ],
+  "resolved_device": "0",
+  "runs": [
+    {
+      "mode": "slice",
+      "conf": 0.05,
+      "merge_iou": 0.5,
+      "tile_iou": 0.7,
+      "precision": 0.2328101644245142,
+      "recall": 0.5302127659574468,
+      "map50": 0.31286220718688385,
+      "map50_95": 0.11413025918892265,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.37900170658894194,
+          "ap50_95": 0.13577596047574036,
+          "predictions": 771,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.27089444786551464,
+          "ap50_95": 0.10314441503720591,
+          "predictions": 714,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.28869046710619495,
+          "ap50_95": 0.10347040205382166,
+          "predictions": 1191,
+          "ground_truths": 428
+        }
+      }
+    },
+    {
+      "mode": "slice",
+      "conf": 0.1,
+      "merge_iou": 0.5,
+      "tile_iou": 0.7,
+      "precision": 0.29786124152321336,
+      "recall": 0.48595744680851066,
+      "map50": 0.301785844056552,
+      "map50_95": 0.11101799883652945,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.3693832158810608,
+          "ap50_95": 0.13299729686608053,
+          "predictions": 575,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.26340353028324515,
+          "ap50_95": 0.10094576164805195,
+          "predictions": 499,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.2725707860053501,
+          "ap50_95": 0.09911093799545587,
+          "predictions": 843,
+          "ground_truths": 428
+        }
+      }
+    },
+    {
+      "mode": "slice",
+      "conf": 0.15,
+      "merge_iou": 0.5,
+      "tile_iou": 0.7,
+      "precision": 0.34075015893197713,
+      "recall": 0.45617021276595743,
+      "map50": 0.29143111362171364,
+      "map50_95": 0.10810066188243946,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.3545061135530141,
+          "ap50_95": 0.12885742246648596,
+          "predictions": 483,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.25306756397795027,
+          "ap50_95": 0.09819906940702545,
+          "predictions": 398,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.2667196633341766,
+          "ap50_95": 0.09724549377380695,
+          "predictions": 692,
+          "ground_truths": 428
+        }
+      }
+    },
+    {
+      "mode": "slice",
+      "conf": 0.2,
+      "merge_iou": 0.55,
+      "tile_iou": 0.7,
+      "precision": 0.3676056338028169,
+      "recall": 0.4442553191489362,
+      "map50": 0.28186211017806606,
+      "map50_95": 0.106216693866709,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.34371702422857986,
+          "ap50_95": 0.12692960681713378,
+          "predictions": 451,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.24697057966088654,
+          "ap50_95": 0.09594161478597171,
+          "predictions": 342,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.2548987266447318,
+          "ap50_95": 0.09577885999702149,
+          "predictions": 627,
+          "ground_truths": 428
+        }
+      }
+    },
+    {
+      "mode": "slice",
+      "conf": 0.2,
+      "merge_iou": 0.5,
+      "tile_iou": 0.7,
+      "precision": 0.37913299044819987,
+      "recall": 0.4391489361702128,
+      "map50": 0.2855273729676369,
+      "map50_95": 0.1057848271292716,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.3509699303473355,
+          "ap50_95": 0.1269491962376375,
+          "predictions": 430,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.24711707512792547,
+          "ap50_95": 0.09588119358372094,
+          "predictions": 331,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.25849511342764986,
+          "ap50_95": 0.09452409156645634,
+          "predictions": 600,
+          "ground_truths": 428
+        }
+      }
+    },
+    {
+      "mode": "slice",
+      "conf": 0.2,
+      "merge_iou": 0.45,
+      "tile_iou": 0.7,
+      "precision": 0.39093701996927804,
+      "recall": 0.43319148936170215,
+      "map50": 0.28615630965530614,
+      "map50_95": 0.10510818737512945,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.3515090049049172,
+          "ap50_95": 0.12605594512589804,
+          "predictions": 401,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.24761678305900858,
+          "ap50_95": 0.09552559255137143,
+          "predictions": 328,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.2593431410019926,
+          "ap50_95": 0.09374302444811888,
+          "predictions": 573,
+          "ground_truths": 428
+        }
+      }
+    },
+    {
+      "mode": "slice",
+      "conf": 0.25,
+      "merge_iou": 0.5,
+      "tile_iou": 0.7,
+      "precision": 0.4049586776859504,
+      "recall": 0.41702127659574467,
+      "map50": 0.2761907518395535,
+      "map50_95": 0.10251854406441237,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.33678671933321014,
+          "ap50_95": 0.12187655646755695,
+          "predictions": 376,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.23959999844756474,
+          "ap50_95": 0.09373671545834399,
+          "predictions": 300,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.25218553773788566,
+          "ap50_95": 0.0919423602673362,
+          "predictions": 534,
+          "ground_truths": 428
+        }
+      }
+    },
+    {
+      "mode": "slice",
+      "conf": 0.3,
+      "merge_iou": 0.5,
+      "tile_iou": 0.7,
+      "precision": 0.4412041392285983,
+      "recall": 0.39914893617021274,
+      "map50": 0.26850423808068585,
+      "map50_95": 0.10018178520650968,
+      "class_metrics": {
+        "missing-rivet": {
+          "ap50": 0.3283917324592711,
+          "ap50_95": 0.11922389137835102,
+          "predictions": 333,
+          "ground_truths": 321
+        },
+        "rust": {
+          "ap50": 0.23265726327411507,
+          "ap50_95": 0.09144123962859041,
+          "predictions": 260,
+          "ground_truths": 426
+        },
+        "scratch": {
+          "ap50": 0.24446371850867132,
+          "ap50_95": 0.08988022461258763,
+          "predictions": 470,
+          "ground_truths": 428
+        }
+      }
+    }
+  ],
+  "best_run": {
+    "mode": "slice",
+    "conf": 0.05,
+    "merge_iou": 0.5,
+    "tile_iou": 0.7,
+    "precision": 0.2328101644245142,
+    "recall": 0.5302127659574468,
+    "map50": 0.31286220718688385,
+    "map50_95": 0.11413025918892265,
+    "class_metrics": {
+      "missing-rivet": {
+        "ap50": 0.37900170658894194,
+        "ap50_95": 0.13577596047574036,
+        "predictions": 771,
+        "ground_truths": 321
+      },
+      "rust": {
+        "ap50": 0.27089444786551464,
+        "ap50_95": 0.10314441503720591,
+        "predictions": 714,
+        "ground_truths": 426
+      },
+      "scratch": {
+        "ap50": 0.28869046710619495,
+        "ap50_95": 0.10347040205382166,
+        "predictions": 1191,
+        "ground_truths": 428
+      }
+    }
+  }
+}
