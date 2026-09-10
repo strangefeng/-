@@ -1,0 +1,5 @@
+ultralytics==8.4.22
+torch==2.10.0
+torchvision==0.25.0
+pillow-heif==1.7.0
+# GPU: install torch/torchvision from https://download.pytorch.org/whl/cu126

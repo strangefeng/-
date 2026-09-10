@@ -1,0 +1,41 @@
+{
+  "input_images": 4577,
+  "issues": 0,
+  "groups": 1102,
+  "old_split_crossing_groups": 204,
+  "split_images": {
+    "val": 766,
+    "train": 2953,
+    "test": 824
+  },
+  "split_instances": {
+    "val": {
+      "rust": 321,
+      "scratch": 348,
+      "missing-rivet": 219,
+      "crack": 1120,
+      "dent": 1109
+    },
+    "train": {
+      "missing-rivet": 941,
+      "rust": 1397,
+      "scratch": 1414,
+      "crack": 5407,
+      "dent": 1629
+    },
+    "test": {
+      "scratch": 306,
+      "rust": 321,
+      "missing-rivet": 248,
+      "crack": 1570,
+      "dent": 717
+    }
+  },
+  "excluded": {
+    "included": 4543,
+    "excluded_duplicate": 34
+  },
+  "group_limit": "Source-image names and pHash inferred groups; aircraft/flight identity unknown. Not a verified aircraft-held-out benchmark.",
+  "excluded_source": "Aircraft_AI_3cls_plus_external_scratch_v1: derived copy with external provenance unresolved",
+  "manifest_sha256": "acdbac8e941926908826dcf5db0d6676b7b8c3a0a3e23bc09f558340b4477dc2"
+}

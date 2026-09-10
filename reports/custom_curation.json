@@ -1,0 +1,20 @@
+{
+  "total": 228,
+  "retained_candidates": 216,
+  "non_target_candidates": [
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    57,
+    58,
+    59,
+    90,
+    186,
+    213
+  ],
+  "user_context": "Two aircraft: glider and retired transport; synchronized IMU/VIO to be supplied later. Exact file mapping not supplied.",
+  "limitations": "Visual groups are provisional. Every retained image still requires defect annotation; no negative labels inferred."
+}

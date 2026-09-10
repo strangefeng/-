@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "images_checked": 4543,
+  "checks": [
+    "group_disjoint",
+    "pixel_hash_disjoint",
+    "copied_images_equal_raw",
+    "labels_exist_and_valid"
+  ],
+  "limitation": "Does not establish semantic label correctness or unseen aircraft independence."
+}

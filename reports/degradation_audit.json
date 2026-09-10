@@ -1,0 +1,7 @@
+{
+  "images": 2700,
+  "source_groups": 100,
+  "conditions": 27,
+  "use": "validation stress development only, not held-out test",
+  "simulation_limit": "Affine foreshortening and neutral-padded resizing; no camera calibration, true physical distances, reflection, IMU or VIO. JPEG recompression shared across conditions."
+}
